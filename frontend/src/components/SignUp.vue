@@ -1,37 +1,62 @@
 <template>
-  <div class='signup'>
-    <div>
-      <span><b>Email:</b></span>
-      <input v-model='email'>
+  <div class='form'>
+    <div id="signup">   
+      <h1>Sign Up for Free</h1>
+
+      <div class="top-row">
+        <div class="field-wrap">
+          <label>
+            First Name<span class="req">*</span>
+          </label>
+          <input type="text" required autocomplete="off" />
+        </div>
+
+        <div class="field-wrap">
+          <label>
+            Last Name<span class="req">*</span>
+          </label>
+          <input type="text"required autocomplete="off"/>
+        </div>
+      </div>
+
+      <div class="field-wrap">
+        <label>
+          Email Address<span class="req">*</span>
+        </label>
+        <input type="email"required autocomplete="off"/>
+      </div>
+
+      <div class="field-wrap">
+        <label>
+          Set A Password<span class="req">*</span>
+        </label>
+        <input type="password"required autocomplete="off"/>
+      </div>
+
+      <div class="field-wrap">
+        <label>
+          Phone Number<span class="req">*</span>
+        </label>
+        <input type="tel"required autocomplete="off"/>
+      </div>
+
+      <div class="field-wrap">
+        <label>
+          Bank Account<span class="req">*</span>
+        </label>
+        <input type="text"required autocomplete="off"/>
+      </div>
+
+      <div class="field-wrap">
+        <label>
+          Address<span class="req">*</span>
+        </label>
+        <input type="text"required autocomplete="off"/>
+      </div>
+
+      <button type="submit" class="button button-block"/>Get Started</button>
+
     </div>
-    <br>
-    <div>
-      <span><b>Name:</b></span>
-      <input v-model='name'>
-    </div>
-    <br>
-    <div>
-      <span><b>Password:</b></span>
-      <input v-model='password'>
-    </div>
-    <br>
-    <div>
-      <span><b>Bank Account:</b></span>
-      <input v-model='bank_account'>
-    </div>
-    <br>
-    <div>
-      <span><b>Phone number:</b></span>
-      <input v-model='phone'>
-    </div>
-    <br>
-    <div>
-      <span><b>Address:</b></span>
-      <input v-model='address'>
-    </div>
-    <br>
-    <button class='btn btn-primary' v-on:click='sign_up()'>Sign Up</button>
-    <h2> {{ msg }} </h2>
   </div>
 </template>
 
@@ -73,4 +98,5 @@ export default {
 </script>
 
 <style>
+@import '../assets/style.css';
 </style>
