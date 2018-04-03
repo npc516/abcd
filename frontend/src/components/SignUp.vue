@@ -5,56 +5,56 @@
 
       <div class="top-row">
         <div class="field-wrap">
-          <label>
+          <label v-bind:class='{active: first_name!=="" && first_name!==null, highlight: first_name!=="" && first_name!==null}'>
             First Name<span class="req">*</span>
           </label>
-          <input type="text" required autocomplete="off" />
+          <input type="text" v-model='first_name' required autocomplete="off" />
         </div>
 
         <div class="field-wrap">
-          <label>
+          <label v-bind:class='{active: last_name!=="" && last_name!==null, highlight: last_name!=="" && last_name!==null}'>
             Last Name<span class="req">*</span>
-          </label>
-          <input type="text"required autocomplete="off"/>
+          </label> 
+          <input type="text" v-model='last_name'required autocomplete="off"/>
         </div>
       </div>
 
       <div class="field-wrap">
-        <label>
+        <label v-bind:class='{active: email!=="" && email!==null, highlight: email!=="" && email!==null}'>
           Email Address<span class="req">*</span>
         </label>
-        <input type="email"required autocomplete="off"/>
+        <input type="email" v-model='email' required autocomplete="off"/>
       </div>
 
       <div class="field-wrap">
-        <label>
+        <label v-bind:class='{active: password!=="" && password!==null, highlight: password!=="" && password!==null}'>
           Set A Password<span class="req">*</span>
         </label>
-        <input type="password"required autocomplete="off"/>
+        <input type="password" v-model='password' required autocomplete="off"/>
       </div>
 
       <div class="field-wrap">
-        <label>
+        <label v-bind:class='{active: phone!=="" && phone!==null, highlight: phone!=="" && phone!==null}'>
           Phone Number<span class="req">*</span>
         </label>
-        <input type="tel"required autocomplete="off"/>
+        <input type="tel" v-model='phone' required autocomplete="off"/>
       </div>
 
       <div class="field-wrap">
-        <label>
+        <label v-bind:class='{active: bank_account!=="" && bank_account!==null, highlight: bank_account!=="" && bank_account!==null}'>
           Bank Account<span class="req">*</span>
         </label>
-        <input type="text"required autocomplete="off"/>
+        <input type="text" v-model='bank_account' required autocomplete="off"/>
       </div>
 
       <div class="field-wrap">
-        <label>
+        <label v-bind:class='{active: address!=="" && address!==null, highlight: address!=="" && address!==null}'>
           Address<span class="req">*</span>
         </label>
-        <input type="text"required autocomplete="off"/>
+        <input type="text" v-model='address' required autocomplete="off"/>
       </div>
 
-      <button type="submit" class="button button-block"/>Get Started</button>
+      <button type="submit" class="button button-block">Get Started</button>
 
     </div>
   </div>
@@ -68,7 +68,8 @@ export default {
     return {
       msg: null,
       email: null,
-      name: null,
+      first_name: null,
+      last_name: null,
       password: null,
       bank_account: null,
       phone: null,
@@ -80,7 +81,7 @@ export default {
       this.msg = null
       Auth.sign_up({
         email: this.email,
-        name: this.name,
+        name: this.first_name + ' ' + this.last_name,
         password: this.password,
         bank_account: this.bank_account,
         phone: this.phone,
