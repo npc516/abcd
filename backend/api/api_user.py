@@ -2,10 +2,6 @@ from flask import jsonify, request
 from main import app, db
 from model.user import User
 
-@app.route('/')
-def f():
-    print('hi')
-
 @app.route('/api/users', methods=['POST'])
 def user_create():
     try:
