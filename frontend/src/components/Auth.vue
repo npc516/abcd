@@ -1,7 +1,11 @@
 <template>
   <div class='form'>
-    <div id="signup">   
-      <h1>Sign Up for Free</h1>
+    <ul class="tab-group">
+      <li class="tab" v-bind:class='{active:s}'><a href="#signup" v-on:click='s=true'>Sign Up</a></li>
+      <li class="tab" v-bind:class='{active:!s}'><a href="#login" v-on:click='s=false'>Log In</a></li>
+    </ul>
+    <div id="signup" v-if='s'>
+      <h1> {{ smsg }} </h1>
 
       <div class="top-row">
         <div class="field-wrap">
@@ -14,8 +18,8 @@
         <div class="field-wrap">
           <label v-bind:class='{active: last_name!=="" && last_name!==null, highlight: last_name!=="" && last_name!==null}'>
             Last Name<span class="req">*</span>
-          </label> 
-          <input type="text" v-model='last_name'required autocomplete="off"/>
+          </label>
+          <input type="text" v-model='last_name' required autocomplete="off"/>
         </div>
       </div>
 
@@ -54,9 +58,29 @@
         <input type="text" v-model='address' required autocomplete="off"/>
       </div>
 
-      <button type="submit" class="button button-block">Get Started</button>
+      <button class="button button-block" v-on:click='sign_up()'>Get Started</button>
 
     </div>
+    <div id="login" v-if='!s'>
+      <h1> {{ lmsg }} </h1>
+
+      <div class="field-wrap">
+        <label v-bind:class='{active: login_email!=="" && login_email!==null, highlight: login_email!=="" && login_email!==null}'>
+          Email Address<span class="req">*</span>
+        </label>
+        <input type="email" v-model='login_email' required autocomplete="off"/>
+      </div>
+
+      <div class="field-wrap">
+        <label v-bind:class='{active: login_password!=="" && login_password!==null, highlight: login_password!=="" && login_password!==null}'>
+          Password<span class="req">*</span>
+        </label>
+        <input type="password" v-model='login_password' required autocomplete="off"/>
+      </div>
+
+      <button class="button button-block" v-on:click='log_in()'>Log In</button>
+    </div>
+    <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/icon.png">
   </div>
 </template>
 
@@ -66,19 +90,37 @@ export default {
   name: 'SignUp',
   data () {
     return {
-      msg: null,
       email: null,
       first_name: null,
       last_name: null,
       password: null,
       bank_account: null,
       phone: null,
-      address: null
+      address: null,
+      login_email: null,
+      login_password: null,
+      s: true,
+      smsg: 'Sign up for free!',
+      lmsg: 'Welcome back!'
     }
   },
   methods: {
+    log_in () {
+      Auth.log_in({
+        email: this.login_email,
+        password: this.login_password
+      }, (err, data) => {
+        if (data.status && err == null) {
+          this.lmsg = 'Log in successful!'
+        } else {
+          this.lmsg = 'Email or password incorrect!'
+        }
+      })
+    },
+    logout () {
+      Auth.logout()
+    },
     sign_up () {
-      this.msg = null
       Auth.sign_up({
         email: this.email,
         name: this.first_name + ' ' + this.last_name,
@@ -88,9 +130,9 @@ export default {
         address: this.address
       }, (err, data) => {
         if (data.status && err == null) {
-          this.msg = 'Sign up successful!'
+          this.smsg = 'Sign up successful!'
         } else {
-          this.msg = 'Sign up failed!'
+          this.smsg = 'Sign up failed!'
         }
       })
     }
