@@ -3,7 +3,7 @@ import axios from 'axios'
 var API = 'http://localhost:5000/api'
 
 export default {
-  login (cred, cb) {
+  log_in (cred, cb) {
     localStorage.removeItem('token')
 
     var data = {status: false}
