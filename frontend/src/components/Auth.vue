@@ -80,7 +80,7 @@
 
       <button class="button button-block" v-on:click='log_in()'>Log In</button>
     </div>
-    <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/icon.png">
+    <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
   </div>
 </template>
 
@@ -141,5 +141,4 @@ export default {
 </script>
 
 <style>
-@import '../assets/style.css';
 </style>

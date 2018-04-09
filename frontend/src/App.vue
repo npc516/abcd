@@ -12,6 +12,7 @@ export default {
 
 <style>
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import './assets/css/style.css';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
