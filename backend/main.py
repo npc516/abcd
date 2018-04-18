@@ -6,6 +6,7 @@ app = Flask('UCC')
 CORS(app)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+db.session.execute('pragma foreign_keys=on')
 
 from api import *
 

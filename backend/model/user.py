@@ -7,6 +7,7 @@ class User(db.Model):
     bank_account = db.Column(db.String(64), nullable=False)
     phone = db.Column(db.Integer, nullable=False)
     address = db.Column(db.String(64), nullable=False)
+    cats = db.relationship('Cat', backref='owner')
 
     @property
     def json(self):

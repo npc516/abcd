@@ -13,13 +13,13 @@ CREATE TABLE Cat(
   weight NUMERIC NOT NULL,
   buy_it_now INTEGER,
   ranking INTEGER,
-  owner_email TEXT REFERENCES User(email) NOT NULL,
-  audition_id INTEGER REFERENCES Audition(event_id),
   insurer_crn TEXT,
   sponsor_crn TEXT,
   policy_id INTEGER,
   sponsorship_id INTEGER,
   trainer_ssn TEXT REFERENCES Trainer(ssn),
+  owner_email TEXT REFERENCES User(email) NOT NULL,
+  audition_id INTEGER REFERENCES Audition(event_id),
   FOREIGN KEY(insurer_crn, policy_id) REFERENCES Policy(crn, policy_id),
   FOREIGN KEY(sponsor_crn, sponsorship_id) REFERENCES Sponsorship(crn, sponsorship_id)
 );
@@ -65,35 +65,35 @@ CREATE TABLE Match(
 
 CREATE TABLE Auction(
   auction_id INTEGER PRIMARY KEY,
-  cat_id INTEGER REFERENCES Cat(cat_id) NOT NULL,
   start_time INTEGER NOT NULL,
   start_price INTEGER NOT NULL,
   duration INTEGER NOT NULL,
-  bid_increment INTEGER NOT NULL
+  bid_increment INTEGER NOT NULL,
+  cat_id INTEGER REFERENCES Cat(cat_id) NOT NULL
 );
 
 CREATE TABLE Bid(
   bid_id INTEGER PRIMARY KEY,
+  price INTEGER NOT NULL,
   user_email TEXT REFERENCES User(email) NOT NULL,
-  auction_id INTEGER REFERENCES Auction(auction_id) NOT NULL,
-  price INTEGER NOT NULL
+  auction_id INTEGER REFERENCES Auction(auction_id) NOT NULL
 );
 
 CREATE TABLE Policy(
   policy_id INTEGER NOT NULL,
-  crn TEXT REFERENCES Company(crn) ON DELETE CASCADE NOT NULL,
   duration INTEGER NOT NULL,
   price INTEGER NOT NULL,
   content TEXT NOT NULL,
+  crn TEXT REFERENCES Company(crn) ON DELETE CASCADE NOT NULL,
   PRIMARY KEY (crn, policy_id)
 );
 
 CREATE TABLE Sponsorship(
   sponsorship_id INTEGER NOT NULL,
-  crn TEXT REFERENCES Company(crn) ON DELETE CASCADE NOT NULL,
   duration INTEGER NOT NULL,
   payment INTEGER NOT NULL,
   content TEXT NOT NULL,
+  crn TEXT REFERENCES Company(crn) ON DELETE CASCADE NOT NULL,
   PRIMARY KEY (crn, sponsorship_id)
 );
 
@@ -102,8 +102,8 @@ CREATE TABLE Trainer(
   license TEXT NOT NULL,
   name TEXT NOT NULL,
   routine TEXT NOT NULL,
-  rating INTEGER REFERENCES RatingFee(rating),
-  experience INTEGER
+  experience INTEGER,
+  rating INTEGER REFERENCES RatingFee(rating)
 );
 
 CREATE TABLE RatingFee(
@@ -129,9 +129,9 @@ CREATE TABLE Delivery(
   delivery_id INTEGER PRIMARY KEY,
   eta INTEGER NOT NULL,
   condition TEXT NOT NULL,
-  cat_id INTEGER REFERENCES Cat(cat_id) NOT NULL,
   current_location TEXT NOT NULL,
   destination TEXT NOT NULL,
+  cat_id INTEGER REFERENCES Cat(cat_id) NOT NULL,
   receiver_email TEXT REFERENCES User(email) NOT NULL,
   FOREIGN KEY (current_location, destination) REFERENCES DeliveryFee(current_location, destination)
 );
