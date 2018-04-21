@@ -1,16 +1,17 @@
 <template>
   <div class='formta'>
-    <h1 style="font-size:500px color:white font-family:arial">CHOOSE YOUR INSURANCE PLAN!</h1>
+    <h1 style="font-size:500px color:white font-family:arial">Check our Sponsors!</h1>
 <div id="trainer" v-if='!s'>
   <div class='trainerform'>
     <div style="display:inline; width:40; float:left; margin-right: 50px">
-     <img style='width:350px; height:300px; ' src='../assets/image/icon.png'>
+     <img style='width:350px; height:300px; ' src='../assets/image/jackk.jpg'>
     </div>
     <div style=" text-align:left; display:inline; width:60px float:left">
-      <p style="color:white; text-align:left; font-size:30px">Insurance Name: UCC full-cover</p>
-      <p style="color:white; text-align:left; font-size:30px">Company name: niconico</p>
-        <p style="color:white; text-align:left; font-size:30px">Insurance fee: $998</p>
-          <p style="color:white; text-align:left; font-size:30px">Policy: ????<br>?????<br>?????</p>
+      <p style="color:white; text-align:left; font-size:30px">Company Name: The Glory Jack</p>
+      <p style="color:white; text-align:left; font-size:30px">Duration: April 1st to May 1st</p>
+        <p style="color:white; text-align:left; font-size:30px">payment: $998</p>
+        <p style="color:white; text-align:left; font-size:30px">Contact Information: (817) 659-9378</p>
+          <p style="color:white; text-align:left; font-size:30px">Description: Chicago start up company that manages cats<br>and ??? dfas<br>?????</p>
 
     </div>
     <br><br>
@@ -22,10 +23,11 @@
 <img style='width:350px; height:300px; ' src='../assets/image/catlogo.png'>
 </div>
 <div style=" text-align:left; display:inline; width:60px float:left">
-  <p style="color:white; text-align:left; font-size:30px">Insurance Name: UCC full-cover</p>
-  <p style="color:white; text-align:left; font-size:30px">Company name: miaomiaomiao</p>
-    <p style="color:white; text-align:left; font-size:30px">Insurance fee: $798</p>
-      <p style="color:white; text-align:left; font-size:30px">Policy: ????<br>?????<br>????</p>
+  <p style="color:white; text-align:left; font-size:30px">Company Name: rich kitty</p>
+  <p style="color:white; text-align:left; font-size:30px">Duration : April 1st to May 1st</p>
+    <p style="color:white; text-align:left; font-size:30px">payment: $698</p>
+    <p style="color:white; text-align:left; font-size:30px">Contact Infromation: (111) 863-5739</p>
+      <p style="color:white; text-align:left; font-size:30px">Description: ????<br>?????<br>????</p>
 </div>
 <br><br>
 <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
