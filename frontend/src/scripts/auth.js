@@ -32,4 +32,9 @@ export default {
       cb(err, data)
     })
   }
+
+//todo
+  // update_price(cred,cb){
+
+  // }
 }
