@@ -40,7 +40,7 @@ export default new Router({
     {
       path: '/delivery',
       name: 'Delivery',
-      component: Buyitnow
+      component: Delivery
     },
         {
       path: '/bidding',

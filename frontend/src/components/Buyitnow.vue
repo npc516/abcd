@@ -2,7 +2,6 @@
   <div class='form'>
 
     <div id="buy" v-if='s'>
-    <div id="signup" v-if='s'>
       <h1> {{ smsg }} </h1>
       <h1> {{ pmsg }} </h1>
 
