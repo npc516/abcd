@@ -1,7 +1,7 @@
 <template>
   <div class='formta'>
     <h1 style="font-size:500px color:white font-family:arial">SIGN UP SUCCESFUL!</h1>
-    <a href='/' style="font-size: 25px">back to home page</a>
+    <a href='/MainPage' style="font-size: 25px">back to home page</a>
 </div>
 </template>
 

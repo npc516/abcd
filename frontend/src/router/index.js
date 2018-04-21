@@ -11,6 +11,7 @@ import Trainer from '@/components/Trainer'
 import Insurance from '@/components/Insurance'
 import Signupsuc from '@/components/Signupsuc'
 import Sponsorship from '@/components/Sponsorship'
+import MainPage from '@/components/MainPage'
 import Cat from '@/components/Cat'
 
 Vue.use(Router)
@@ -53,12 +54,12 @@ export default new Router({
       name: 'Delivery',
       component: Delivery
     },
-        {
+    {
       path: '/bidding',
       name: 'Bidding',
       component: Bidding
     },
-        {
+    {
       path: '/match',
       name: 'Match',
       component: Match

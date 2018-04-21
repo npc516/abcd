@@ -1,6 +1,5 @@
 <template>
   <div class='form'>
-    
     <div id="signup" v-if='s'>
       <h1> {{ smsg }} </h1>
 
@@ -54,8 +53,6 @@
     <div id="login" v-if='!s'>
       <h1> {{ lmsg }} </h1>
 
-
-
       <button class="button button-block" v-on:click='log_in()'>Log In</button>
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
@@ -75,11 +72,10 @@ export default {
       state: null,
       zip: null,
       s: true,
-      smsg: 'Please enter your shipping address',
+      smsg: 'Please enter your shipping address'
     }
   },
   methods: {
-    
   }
 }
 </script>

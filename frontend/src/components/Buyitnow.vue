@@ -14,9 +14,7 @@
 </template>
 
 <script>
-// import Auth from '../scripts/auth'
 export default {
-  name: 'Buy',
   name: 'Buyitnow',
   data () {
     return {
