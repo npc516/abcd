@@ -6,6 +6,11 @@ import Auth from '@/components/Auth'
 import Buyitnow from '@/components/Buyitnow'
 import Delivery from '@/components/Delivery'
 import Bidding from '@/components/Bidding'
+import Match from '@/components/Match'
+import Trainer from '@/components/Trainer'
+import Insurance from '@/components/Insurance'
+import Signupsuc from '@/components/Signupsuc'
+import Sponsorship from '@/components/Sponsorship'
 
 Vue.use(Router)
 
@@ -46,6 +51,36 @@ export default new Router({
       path: '/bidding',
       name: 'Bidding',
       component: Bidding
+    },
+        {
+      path: '/match',
+      name: 'Match',
+      component: Match
+    },
+    {
+      path: '/trainer',
+      name: 'Trainer',
+      component: Trainer
+    },
+    {
+      path: '/insurance',
+      name: 'Insurance',
+      component: Insurance
+    },
+    {
+      path: '/signupsuc',
+      name: 'Signupsuc',
+      component: Signupsuc
+    },
+    {
+      path: '/Sponsorship',
+      name: 'Sponsorship',
+      component: Sponsorship
+    },
+    {
+      path: '/MainPage',
+      name: 'MainPage',
+      component: MainPage
     }
   ]
 })
