@@ -52,5 +52,6 @@ export default new Router({
       name: 'Signupsuc',
       component: Signupsuc
     }
+
   ]
 })

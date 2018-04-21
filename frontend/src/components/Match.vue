@@ -120,15 +120,12 @@
     <br><br><br>
     <ul class="tab-group">
       <button class="button button-block" onclick="window.location.href='/Trainer'">JOIN THE MATCH NOW!</button>
-    </form>
     </ul>
   </div>
 </template>
 
-<script language="javascript" type='text/javascript'>
-function fn () {
-window.location.href='/Trainer'
-}
+<script>
+
 </script>
 
 <style>

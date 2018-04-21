@@ -4,7 +4,7 @@
 <div id="trainer" v-if='!s'>
   <div class='trainerform'>
     <div style="display:inline; width:40; float:left; margin-right: 50px">
-     <img style='width:250px; height:300px; ' src='../assets/image/a.jpg'>
+     <img style='width:350px; height:300px; ' src='../assets/image/icon.png'>
     </div>
     <div style=" text-align:left; display:inline; width:60px float:left">
       <p style="color:white; text-align:left; font-size:30px">Insurance Name: UCC full-cover</p>
@@ -19,7 +19,7 @@
 <br><br><br>
 <div class='trainerform'>
 <div style="display:inline; width:40; float:left; margin-right: 50px">
-<img style='width:250px; height:300px; ' src='../assets/image/a.jpg'>
+<img style='width:350px; height:300px; ' src='../assets/image/catlogo.png'>
 </div>
 <div style=" text-align:left; display:inline; width:60px float:left">
   <p style="color:white; text-align:left; font-size:30px">Insurance Name: UCC full-cover</p>
