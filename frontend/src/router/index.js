@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/Index'
 import Auth from '@/components/Auth'
 import Buyitnow from '@/components/Buyitnow'
+import Delivery from '@/components/Delivery'
 import Bidding from '@/components/Bidding'
 
 Vue.use(Router)
@@ -34,6 +35,11 @@ export default new Router({
     {
       path: '/buyitnow',
       name: 'Buyitnow',
+      component: Buyitnow
+    },
+    {
+      path: '/delivery',
+      name: 'Delivery',
       component: Buyitnow
     },
         {
