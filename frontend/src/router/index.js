@@ -11,6 +11,7 @@ import Trainer from '@/components/Trainer'
 import Insurance from '@/components/Insurance'
 import Signupsuc from '@/components/Signupsuc'
 import Sponsorship from '@/components/Sponsorship'
+import Cat from '@/components/Cat'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/index',
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/cat',
+      name: 'Cat',
+      component: Cat
     },
     {
       path: '/auth',
