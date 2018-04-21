@@ -17,12 +17,17 @@ class Cat(db.Model):
     sponsor_crn = db.Column(db.String(64), nullable=True)
     policy_id = db.Column(db.Integer, nullable=True)
     sponsorship_id = db.Column(db.Integer, nullable=True)
+
     trainer_ssn = db.Column(db.String(64), db.ForeignKey('trainer.ssn'), nullable=True)
     owner_email = db.Column(db.String(64), db.ForeignKey('user.email'), nullable=False)
     audition_id = db.Column(db.Integer, db.ForeignKey('audition.event_id'), nullable=True)
+
+    auction = db.relationship('Auction', backref='cat')
+    comment = db.relationship('Comment', backref='cat')
+
     __table__args = (db.ForeignKeyConstraint(['insurer_crn', 'policy_id'], ['policy.crn', 'policy.policy_id']),
                      db.ForeignKeyConstraint(['sponsor_crn', 'sponsorship_id'], ['sponsorship.crn', 'sponsorship.sponsorship_id']))
-
-if Cat.query.all() == []:
-    db.session.add(Cat(age=2,breed=2,color='a',eye_color='a',hometown='a',photo_path='a',sex=0,weight=2.3,owner_email='a'))
-    db.session.commit()
+    
+    @property
+    def json(self):
+        return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k != 'json'}

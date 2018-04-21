@@ -118,7 +118,7 @@ CREATE TABLE DeliveryFee(
   PRIMARY KEY (current_location, destination)
 );
 
-CREATE TABLE Comments(
+CREATE TABLE Comment(
   comment_id INTEGER PRIMARY KEY,
   content TEXT NOT NULL,
   user_email TEXT REFERENCES User(email) NOT NULL,

@@ -7,14 +7,10 @@ class User(db.Model):
     bank_account = db.Column(db.String(64), nullable=False)
     phone = db.Column(db.Integer, nullable=False)
     address = db.Column(db.String(64), nullable=False)
-    cats = db.relationship('Cat', backref='owner')
+
+    cat = db.relationship('Cat', backref='owner')
+    comment = db.relationship('Comment', backref='commenter')
 
     @property
     def json(self):
-        return {'email': self.email,
-                'name': self.name,
-                'password': self.password,
-                'bank_account': self.bank_account,
-                'phone': self.phone,
-                'address': self.address
-                }
+        return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k != 'json'}
