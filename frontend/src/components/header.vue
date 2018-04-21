@@ -2,10 +2,12 @@
   <nav>
     <ul>
       <li><router-link to="/MainPage" exact>UCC</router-link></li>
-      <li><router-link to="/Index" exact>Tournament</router-link></li>
+      <li><router-link to="/Match" exact>Tournament</router-link></li>
       <li><router-link to="/123" exact>All Cat</router-link></li>
       <li><router-link to="/AddCat" exact>Add a Cat</router-link></li>
       <li><router-link to="/231" exact>Cat Search</router-link></li>
+      <li><router-link to="/Insurance">Insurance</router-link></li>
+      <li><router-link to="/Sponsorship">Sponsors</router-link></li>
       <li><router-link to="/auth"  exact>Sign Up/Log In</router-link></li>
     </ul>
   </nav>
