@@ -7,6 +7,8 @@ import Match from '@/components/Match'
 import Trainer from '@/components/Trainer'
 import Insurance from '@/components/Insurance'
 import Signupsuc from '@/components/Signupsuc'
+import Sponsorship from '@/components/Sponsorship'
+
 Vue.use(Router)
 
 export default new Router({
@@ -51,6 +53,11 @@ export default new Router({
       path: '/signupsuc',
       name: 'Signupsuc',
       component: Signupsuc
+    },
+    {
+      path: '/Sponsorship',
+      name: 'Sponsorship',
+      component: Sponsorship
     }
 
   ]
