@@ -15,7 +15,7 @@
 
     </div>
     <br><br>
-      <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
+      
  </div>
 <br><br><br>
 <div class='trainerform'>
@@ -30,7 +30,7 @@
       <p style="color:white; text-align:left; font-size:30px">Description: ????<br>?????<br>????</p>
 </div>
 <br><br>
-<button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
+
 </div>
 <br><br><br>
 </div>
