@@ -113,13 +113,15 @@
                               href="www.baidu.com"
                               target="blank"
                               alt="4-8">
-
+<!--图片上每个猫都做了map，用户点击时应该会连接到相应的猫的信息。准备在猫的界面用ID解决-->
 </map>
     </div>
 
     <br><br><br>
     <ul class="tab-group">
       <button class="button button-block" onclick="window.location.href='/Trainer'">JOIN THE MATCH NOW!</button>
+  <!--当用户已经login，direct到trainer界面，如果没login就转到login界面。
+  //据说是用session实现，尝试了一下但没写出来。。-->
     </ul>
   </div>
 </template>

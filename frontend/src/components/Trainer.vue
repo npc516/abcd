@@ -20,6 +20,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;Trainer experience: N/A</p>
     </div><br><br>
       <button class="button button-block" onclick="window.location.href='/Insurance'">choose</button>
+      <!--点击时连接上database里user的信息和trainer信息，并跳转到insurance页面。暂时只实现了跳转页面-->
  </div>
 <br><br><br>
 <div class='trainerform'>
@@ -39,6 +40,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trainer experience: N/A</p>
 </div><br><br>
 <button class="button button-block" onclick="window.location.href='/Insurance'">choose</button>
+<!--点击时连接上database里user的信息和trainer信息，并跳转到insurance页面。暂时只实现了跳转页面-->
 </div>
 <br><br><br>
 <div class='trainerform'>
@@ -58,6 +60,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;Trainer experience: N/A</p>
 </div><br><br>
 <button class="button button-block" onclick="window.location.href='/Insurance'">choose</button>
+<!--点击时连接上database里user的信息和trainer信息，并跳转到insurance页面。暂时只实现了跳转页面-->
 </div>
 <br><br><br>
 </div>

@@ -15,6 +15,7 @@
     </div>
     <br><br>
       <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
+      <!--点击时连接上database里user的信息和insurance信息，并跳转到signupsuc页面。暂时只实现了跳转页面-->
  </div>
 <br><br><br>
 <div class='trainerform'>
@@ -29,6 +30,7 @@
 </div>
 <br><br>
 <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
+<!--点击时连接上database里user的信息和insurance信息，并跳转到signupsuc页面。暂时只实现了跳转页面-->
 </div>
 <br><br><br>
 </div>
