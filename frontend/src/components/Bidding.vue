@@ -5,8 +5,8 @@
       <h1> {{ smsg }} </h1>
       <h1> {{ pmsg }} </h1>
 
-          <div class="field-wrap">
-        <label v-bind:class='{active: newprice!=="" && newprice!==null, highlight: newprice!=="" && newprice!==null}'>
+      <div class="field-wrap">
+        <label v-bind:class='{active: newprice !== "" && newprice !== null, highlight: newprice !== "" && newprice !== null}'>
           Your Price <span class="req">*</span>
         </label>
         <input type="tel" v-model='newprice' required autocomplete="off"/>
@@ -26,26 +26,25 @@ export default {
   name: 'Bid',
   data () {
     return {
-      newprice:null,
+      newprice: null,
       s: true,
       smsg: 'The highest bidding for this cat is',
       pmsg: '[put price here]'
     }
   },
   methods: {
-     update_price() {
+    update_price () {
       Auth.update_price({
-      newprice:this.newprice
-      },
-      (err, data) => {
-        if (newprice<=oldprice && err == null) {
+        newprice: this.newprice
+      }, (err, data) => {
+        if (this.newprice <= this.oldprice && err == null) {
           this.lmsg = 'Low Price!'
         } else {
           this.lmsg = 'Bidding Succesful!'
         }
-    })
+      })
     }
-}
+  }
 }
 </script>
 <style>
