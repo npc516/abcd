@@ -1,6 +1,6 @@
 <template>
   <div class='form'>
-  <img style="position:absolute; top:2265px; left:710px; width:400px" src="../assets/image/icon.png">
+  <img style="position:absolute; top:2365px; left:710px; width:400px" src="../assets/image/icon.png">
     <ul class="tab-group">
       <li class="tab" v-bind:class='{active:s}'> <a href="#match" v-on:click='s=true'>MATCH INFORMATION</a></li>
     </ul>
