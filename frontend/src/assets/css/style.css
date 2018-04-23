@@ -31,7 +31,34 @@ a:hover {
   -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
           box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
+.formhaha
+{
+  background: rgba(19, 35, 47, 0.6);
+  padding: 60px ;
+  max-width: 1800px ;
+  margin: 40px ;
 
+  -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.formta
+{
+  background: rgba(19, 35, 47, 0.6);
+  padding: 60px ;
+  max-width: 1600px ;
+  margin: 100px ;
+
+  -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.trainerform
+{
+  background: rgba(30,4,47,0.3);
+  padding: 60px;
+  max-width: 1800px;
+  max-height: 1600px;
+  margin: 40px;
+}
 .tab-group {
   list-style: none;
   padding: 0;

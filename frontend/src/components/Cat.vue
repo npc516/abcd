@@ -25,5 +25,5 @@
 </template>
 
 <style>
-  @import '../../static/css/match.css';
+  @import '../../static/css/style.css';
 </style>
