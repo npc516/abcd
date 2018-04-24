@@ -1,6 +1,6 @@
 <template>
   <div class='formta'>
-    <img style="position:absolute; top:2670px; left:710px; width:400px" src="../assets/image/icon.png">
+    <img style="position:absolute; top:2770px; left:710px; width:400px" src="../assets/image/icon.png">
     <h1 style="font-size:500px color:white font-family:arial">Check our professional trainers!</h1>
 <div id="trainer" v-if='!s'>
   <div class='trainerform'>

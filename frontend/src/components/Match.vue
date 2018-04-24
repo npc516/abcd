@@ -25,93 +25,108 @@
           <area
             shape="circle"
             coords="760,60,70"
-            href="www.baidu.com"
+            href="/cat"
             target="blank"
+            title="N/A"
             alt="champ">
 
         <area
           shape="circle"
           coords="440,320,70"
-          href="www.baidu.com"
+          href="/cat"
           target="blank"
+          title="N/A"
           alt="yazuo">
       <area
         shape="circle"
         coords="1140,320,70"
-        href="www.baidu.com"
+        href="/cat"
         target="blank"
+        title="N/A"
         alt="yayou">
       <area
         shape="circle"
         coords="260,590,70"
-        href="www.baidu.com"
+        href="/cat"
         target="blank"
+        title="N/A"
         alt="3-1">
         <area
           shape="circle"
           coords="620,590,70"
-          href="www.baidu.com"
+          href="/cat"
           target="blank"
+          title="N/A"
           alt="3-2">
           <area
             shape="circle"
             coords="960,590,70"
-            href="www.baidu.com"
+            href="/cat"
             target="blank"
+            title="N/A"
             alt="3-3">
             <area
               shape="circle"
               coords="1320,590,70"
-              href="www.baidu.com"
+              href="/cat"
               target="blank"
+              title="N/A"
               alt="3-4">
               <area
                 shape="circle"
                 coords="180,860,70"
-                href="www.baidu.com"
+                href="/cat#1"
                 target="blank"
+                title="Aaron"
                 alt="4-1">
                 <area
                   shape="circle"
                   coords="360,860,70"
-                  href="www.baidu.com"
+                  href="/cat#2"
                   target="blank"
+                  title="Bob"
                   alt="4-2">
                   <area
                     shape="circle"
                     coords="540,860,70"
-                    href="www.baidu.com"
+                    href="/cat#3"
                     target="blank"
+                    title="Jocky"
                     alt="4-3">
                     <area
                       shape="circle"
                       coords="700,860,70"
-                      href="www.baidu.com"
+                      href="/cat#4"
                       target="blank"
+                      title="Jackson"
                       alt="4-4">
                       <area
                         shape="circle"
                         coords="880,860,70"
-                        href="www.baidu.com"
+                        href="/cat#5"
                         target="blank"
+                        title="Noah"
                         alt="4-5">
                         <area
                           shape="circle"
                           coords="1060,860,70"
-                          href="www.baidu.com"
+                          href="/cat#6"
                           target="blank"
+                          title="Jerry"
                           alt="4-6">
                           <area
                             shape="circle"
                             coords="1240,860,70"
-                            href="www.baidu.com"
+                            href="/cat#7"
                             target="blank"
+                            title="Mia"
                             alt="4-7">
                             <area
                               shape="circle"
                               coords="1400,860,70"
-                              href="www.baidu.com"
+                              href="/cat#8"
                               target="blank"
+                              title="Jake"
                               alt="4-8">
 <!--图片上每个猫都做了map，用户点击时应该会连接到相应的猫的信息。准备在猫的界面用ID解决-->
 </map>
