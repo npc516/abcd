@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import AddCat from '@/components/AddCat'
+import CatSearch from '@/components/CatSearch'
 import Index from '@/components/Index'
 import Auth from '@/components/Auth'
 import Buyitnow from '@/components/Buyitnow'
@@ -49,6 +50,11 @@ export default new Router({
       path: '/AddCat',
       name: 'AddCat',
       component: AddCat
+    },
+    {
+      path: '/CatSearch',
+      name: 'CatSearch',
+      component: CatSearch
     },
     {
       path: '/buyitnow',
