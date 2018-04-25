@@ -137,7 +137,7 @@
      <img style='width:350px; height:300px; ' src='../assets/image/british-shorthair-cats.jpg'>
     </div>
     <div style=" text-align:left; display:inline; width:60px float:left">
-      <p style="color:white; text-align:left; font-size:30px">name: </p>
+      <p style="color:white; text-align:left; font-size:30px">name: {{name}}</p>
       <p style="color:white; text-align:left; font-size:30px">age: </p>
         <p style="color:white; text-align:left; font-size:30px">Breed: </p>
         <p style="color:white; text-align:left; font-size:30px">Weight:</p>
