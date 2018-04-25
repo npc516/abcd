@@ -131,17 +131,19 @@
   <button class="button button-block" onclick="window.location.href='/bidding'">Enter Bidding</button>
 </div>
 <div id="trainer" >
-<li v-for='name in [1,2,3,4,5,6,7,8]'>
+
+  <ul id="cattest">
+<li v-for="item in items" :key="item.name">
   <div class='trainerform'>
     <div style="display:inline; width:40; float:left; margin-right: 50px">
      <img style='width:350px; height:300px; ' src='../assets/image/british-shorthair-cats.jpg'>
     </div>
     <div style=" text-align:left; display:inline; width:60px float:left">
-      <p style="color:white; text-align:left; font-size:30px">name: {{name}}</p>
-      <p style="color:white; text-align:left; font-size:30px">age: </p>
-        <p style="color:white; text-align:left; font-size:30px">Breed: </p>
-        <p style="color:white; text-align:left; font-size:30px">Weight:</p>
-        <p style="color:white; text-align:left; font-size:30px">color: </p>
+      <p style="color:white; text-align:left; font-size:30px">name: {{item.name}}</p>
+      <p style="color:white; text-align:left; font-size:30px">age:{{item.age}} </p>
+        <p style="color:white; text-align:left; font-size:30px">Breed:{{item.breed}} </p>
+        <p style="color:white; text-align:left; font-size:30px">Weight:{{item.weight}}</p>
+        <p style="color:white; text-align:left; font-size:30px">color:{{item.color}} </p>
     </div>
     <br><br>
     <button class="button button-block" onclick="window.location.href='/buyitnow'">Buy it Now</button>
@@ -149,6 +151,7 @@
     <button class="button button-block" onclick="window.location.href='/bidding'">Enter Bidding</button>
   </div>
 </li>
+</ul>
 
 </div>
 
@@ -157,6 +160,32 @@
 
 </div>
 </template>
+<script>
+export default {
+  name: 'cattest',
+  data () {
+    return {
+      items: [
+        {
+          name: 'null',
+          age: 'null',
+          breed: 'null',
+          weight: 'null',
+          color: 'null'
+        },
+        {
+          name: 'jack',
+          age: '20',
+          breed: 'human',
+          weight: 'infinity',
+          color: '???'
+        }
+      ]
+    }
+  }
+}
+
+</script>
 
 <style>
   @import '../../static/css/style.css';
