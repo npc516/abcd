@@ -31,6 +31,10 @@ export default {
     }).catch((err) => {
       cb(err, data)
     })
+  },
+
+  is_logged_in () {
+    return localStorage.getItem('token') === null
   }
 
 // todo
