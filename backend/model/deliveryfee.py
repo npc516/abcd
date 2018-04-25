@@ -5,7 +5,7 @@ class DeliveryFee(db.Model):
     current_location = db.Column(db.String(64), primary_key=True, nullable=False)
     fee = db.Column(db.Integer, nullable=False)
 
-    delivery = db.relationship('Delivery', backref='delivery_fee')
+    # delivery = db.relationship('Delivery', backref='delivery_fee')
 
     @property
     def json(self):

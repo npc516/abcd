@@ -7,7 +7,7 @@ class Trainer(db.Model):
     routine = db.Column(db.String(64), nullable=False)
     experience = db.Column(db.Integer, nullable=True)
 
-    rating = db.Column(db.Integer, db.ForeignKey('ratingfee.rating'))
+    rating = db.Column(db.Integer, db.ForeignKey('rating_fee.rating'))
 
     @property
     def json(self):

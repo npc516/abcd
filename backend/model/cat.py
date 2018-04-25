@@ -25,8 +25,8 @@ class Cat(db.Model):
     auction = db.relationship('Auction', backref='cat')
     comment = db.relationship('Comment', backref='cat')
 
-    __table__args = (db.ForeignKeyConstraint(['insurer_crn', 'policy_id'], ['policy.crn', 'policy.policy_id']),
-                     db.ForeignKeyConstraint(['sponsor_crn', 'sponsorship_id'], ['sponsorship.crn', 'sponsorship.sponsorship_id']))
+    __table_args__ = (db.ForeignKeyConstraint(['insurer_crn', 'policy_id'], ['policy.crn', 'policy.policy_id']),
+                     db.ForeignKeyConstraint(['sponsor_crn', 'sponsorship_id'], ['sponsorship.crn', 'sponsorship.sponsorship_id']),)
     
     @property
     def json(self):
