@@ -25,7 +25,7 @@
 <br><br><br>
 <div class='trainerform'>
 <div style="display:inline; width:40; float:left; margin-right: 50px">
-<img style='width:250px; height:300px; ' src='../assets/image/jacky.jpg'>
+<img style='width:250px; height:300px; ' src='../assets/image/timg.jpg'>
 </div>
 <div style=" text-align:left; display:inline; width:60px float:left">
 <p style="color:white; text-align:left; font-size:30px">Trainer Name: Jacky Wong</p>
