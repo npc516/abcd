@@ -1,7 +1,7 @@
 <template>
   <div class='formta'>
 
-<div id="trainer" v-if='!s'>
+<div id="trainer">
   <div class='trainerform' id='1'>
     <div style="display:inline; width:40; float:left; margin-right: 50px">
      <img style='width:350px; height:300px; ' src='../assets/image/british-shorthair-cats.jpg'>
@@ -136,7 +136,7 @@
 <li v-for="item in items" :key="item.name">
   <div class='trainerform'>
     <div style="display:inline; width:40; float:left; margin-right: 50px">
-     <img style='width:350px; height:300px; ' src='../assets/image/british-shorthair-cats.jpg'>
+     <img style='width:350px; height:300px;' :src="loadImage(item.path)">
     </div>
     <div style=" text-align:left; display:inline; width:60px float:left">
       <p style="color:white; text-align:left; font-size:30px">name: {{item.name}}</p>
@@ -167,6 +167,7 @@ export default {
     return {
       items: [
         {
+          path: 'bosi',
           name: 'null',
           age: 'null',
           breed: 'null',
@@ -174,6 +175,7 @@ export default {
           color: 'null'
         },
         {
+          path: 'british-shorthair-cats',
           name: 'jack',
           age: '20',
           breed: 'human',
@@ -181,6 +183,11 @@ export default {
           color: '???'
         }
       ]
+    }
+  },
+  methods: {
+    loadImage (imagePath) {
+      return require('../assets/image/' + imagePath + '.jpg')
     }
   }
 }
