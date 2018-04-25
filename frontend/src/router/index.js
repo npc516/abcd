@@ -16,6 +16,7 @@ import Sponsorship from '@/components/Sponsorship'
 import MainPage from '@/components/MainPage'
 import Cat from '@/components/Cat'
 import test from '@/components/test'
+import perireport from '@/components/perireport'
 
 Vue.use(Router)
 
@@ -106,6 +107,12 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: test
+    },
+    {
+      path: '/perireport',
+      name: 'perireport',
+      component: perireport
+
     }
   ]
 })
