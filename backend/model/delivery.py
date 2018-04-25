@@ -10,9 +10,9 @@ class Delivery(db.Model):
     cat_id = db.Column(db.Integer, db.ForeignKey('cat.cat_id'), nullable=False)
     receiver_email = db.Column(db.String(64), db.ForeignKey('user.email'), nullable=False)
 
-    __table__args = (db.ForeignKeyConstraint(['current_location', 'destination'], ['deliveryfee.current_location', 'deliveryfee.destination']))
-
+    __table_args__ = (db.ForeignKeyConstraint(['current_location', 'destination'], ['delivery_fee.current_location', 'delivery_fee.destination']),)
 
     @property
     def json(self):
         return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k != 'json'}
+
