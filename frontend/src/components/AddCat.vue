@@ -1,6 +1,6 @@
 <template>
   <div class='form'>
-    <div id="signup" v-if='s'>
+    <div id="addCat">
       <h1> {{ smsg }} </h1>
 
       <div class="field-wrap">
@@ -41,15 +41,9 @@
       </div>
       <div class="field-wrap">
         <input type="file" @change="onFileSelected">
-        <button @click="onUpload">Upload</button>
       </div>
-      <button class="button button-block" v-on:click='sign_up()'>Upload</button>
+      <button class="button button-block" v-on:click='upload()'>Upload</button>
 
-    </div>
-    <div id="login" v-if='!s'>
-      <h1> {{ lmsg }} </h1>
-
-      <button class="button button-block" v-on:click='log_in()'>Log In</button>
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
   </div>
@@ -57,8 +51,7 @@
 </template>
 
 <script>
-
-import axios from 'axios'
+import Cat from '../scripts/cat.js'
 export default {
   name: 'AddCat',
   data () {
@@ -74,16 +67,21 @@ export default {
     }
   },
   methods: {
-    onFileSelected (event) {
-      this.selectedFile = event.target.files[0]
-    },
-    onUpload () {
-      const fd = new FormData()
-      fd.append('image', this.selectedFile, this.selectedFile.name)
-      axios.post('', fd)
-        .then(res => {
-          console.log(res)
-        })
+    upload () {
+      Cat.upload({
+        name: this.cat_name,
+        color: this.cat_color,
+        breed: this.breed,
+        age: this.age,
+        weight: this.weight,
+        photo_path: this.selectedFile
+      }, (err, data) => {
+        if (data.status && err == null) {
+          this.smsg = 'Uploaded'
+        } else {
+          this.smsg = 'Upload fail'
+        }
+      })
     }
   }
 }
