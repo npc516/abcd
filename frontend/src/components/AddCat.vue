@@ -82,14 +82,15 @@ export default {
     return {
       cat_name: null,
       cat_color: null,
+      eye_color: null,
       breed: null,
       age: null,
       weight: null,
-      hometown:null,
-      sex:null,
+      hometown: null,
+      sex: null,
       s: true,
       selectedFile: null,
-      owner_email:null,
+      owner_email: null,
       smsg: 'Please enter information of your cat'
     }
   },

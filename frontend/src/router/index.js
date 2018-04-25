@@ -112,7 +112,6 @@ export default new Router({
       path: '/perireport',
       name: 'perireport',
       component: perireport
-
     }
   ]
 })
