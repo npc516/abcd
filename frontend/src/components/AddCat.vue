@@ -40,6 +40,30 @@
         <input type="text" v-model='weight' required autocomplete="off"/>
       </div>
       <div class="field-wrap">
+        <label v-bind:class='{active: eye_color!=="" && eye_color!==null, highlight: eye_color!=="" && eye_color!==null}'>
+          Eye Color<span class="req">*</span>
+        </label>
+        <input type="text" v-model='eye_color' required autocomplete="off"/>
+      </div>
+      <div class="field-wrap">
+        <label v-bind:class='{active: hometown!=="" && hometown!==null, highlight: hometown!=="" && hometown!==null}'>
+          Hometown<span class="req">*</span>
+        </label>
+        <input type="text" v-model='hometown' required autocomplete="off"/>
+      </div>
+      <div class="field-wrap">
+        <label v-bind:class='{active: sex!=="" && sex!==null, highlight: sex!=="" && sex!==null}'>
+          Sex<span class="req">*</span>
+        </label>
+        <input type="text" v-model='sex' required autocomplete="off"/>
+      </div>
+      <div class="field-wrap">
+        <label v-bind:class='{active: owner_email!=="" && owner_email!==null, highlight: owner_email!=="" && owner_email!==null}'>
+          Owner Email<span class="req">*</span>
+        </label>
+        <input type="text" v-model='owner_email' required autocomplete="off"/>
+      </div>
+      <div class="field-wrap">
         <input type="file" @change="onFileSelected">
       </div>
       <button class="button button-block" v-on:click='upload()'>Upload</button>
@@ -61,8 +85,11 @@ export default {
       breed: null,
       age: null,
       weight: null,
+      hometown:null,
+      sex:null,
       s: true,
       selectedFile: null,
+      owner_email:null,
       smsg: 'Please enter information of your cat'
     }
   },
@@ -74,7 +101,11 @@ export default {
         breed: this.breed,
         age: this.age,
         weight: this.weight,
-        photo_path: this.selectedFile
+        photo_path: this.selectedFile,
+        eye_color: this.eye_color,
+        hometown: this.hometown,
+        sex: this.sex,
+        owner_email: this.owner_email
       }, (err, data) => {
         if (data.status && err == null) {
           this.smsg = 'Uploaded'

@@ -1,7 +1,7 @@
 <template>
   <div>
       <img id= "CatBg" style="position:absolute; top:120px; left:500px; width:850px" :src='imageLoad()'>
-      <button style="position:absolute; top:120px; left:1300px; width:100px" v-on:click='imageChange()'>Feeling Kitty</button>
+      <button style="position:absolute; top:120px; left:1400px; width:100px" v-on:click='imageChange()'>Feeling Kitty</button>
       <p>Show me another cat!</p>
   </div>
 </template>
