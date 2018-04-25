@@ -1,7 +1,6 @@
 <template>
   <div class='formta'>
 
-
 <div id="trainer" >
 
   <ul id="cattest">
@@ -26,8 +25,6 @@
 </ul>
 
 </div>
-
-
 
 </div>
 </template>
