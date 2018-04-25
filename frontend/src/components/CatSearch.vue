@@ -64,13 +64,12 @@ export default {
   name: 'SignUp',
   data () {
     return {
-      email: null,
-      first_name: null,
-      last_name: null,
-      address: null,
-      city: null,
-      state: null,
-      zip: null,
+      cat_name: null,
+      cat_id: null,
+      weight: null,
+      breed: null,
+      color: null,
+      age: null,
       s: true,
       smsg: 'Please enter Searching information'
     }
