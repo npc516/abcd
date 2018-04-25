@@ -15,6 +15,7 @@ import Signupsuc from '@/components/Signupsuc'
 import Sponsorship from '@/components/Sponsorship'
 import MainPage from '@/components/MainPage'
 import Cat from '@/components/Cat'
+import test from '@/components/test'
 
 Vue.use(Router)
 
@@ -100,6 +101,11 @@ export default new Router({
       path: '/MainPage',
       name: 'MainPage',
       component: MainPage
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test
     }
   ]
 })
