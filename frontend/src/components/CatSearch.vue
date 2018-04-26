@@ -106,9 +106,9 @@ export default {
         sex: this.sex
       }, (err, data) => {
         if (data.status && err == null) {
-          this.smsg = 'Uploaded'
+          this.smsg = 'Search completed'
         } else {
-          this.smsg = 'Upload fail'
+          this.smsg = 'Search failed'
         }
       })
     }

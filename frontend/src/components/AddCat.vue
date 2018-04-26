@@ -3,7 +3,7 @@
     <div id="addCat">
       <h1> {{ smsg }} </h1>
 
-      <div class="field-wrap">
+      <div class="top-row">
         <div class="field-wrap">
           <label v-bind:class='{active: cat_name!=="" && cat_name!==null, highlight: cat_name!=="" && cat_name!==null}'>
             Cat Name<span class="req">*</span>
@@ -11,26 +11,19 @@
           <input type="text" v-model='cat_name' required autocomplete="off" />
         </div>
       </div>
-
-      <div class="field-wrap">
-        <label v-bind:class='{active: cat_color!=="" && cat_color!==null, highlight: cat_color!=="" && cat_color!==null}'>
-          Cat Color<span class="req">*</span>
-        </label>
-        <input type="cat_color" v-model='cat_color' required autocomplete="off"/>
-      </div>
-
+      <br>
       <div class="field-wrap">
         <label v-bind:class='{active: breed!=="" && breed!==null, highlight: breed!=="" && breed!==null}'>
           Breed<span class="req">*</span>
         </label>
-        <input type="breed" v-model='breed' required autocomplete="off"/>
+        <input type="text" v-model='breed' required autocomplete="off"/>
       </div>
 
       <div class="field-wrap">
-        <label v-bind:class='{active: age!=="" && age!==null, highlight: age!=="" && age!==null}'>
-          Age<span class="req">*</span>
+        <label v-bind:class='{active: color!=="" && color!==null, highlight: color!=="" && color!==null}'>
+          Color<span class="req">*</span>
         </label>
-        <input type="tel" v-model='age' required autocomplete="off"/>
+        <input type="text" v-model='color' required autocomplete="off"/>
       </div>
 
       <div class="field-wrap">
@@ -39,6 +32,14 @@
         </label>
         <input type="text" v-model='weight' required autocomplete="off"/>
       </div>
+
+      <div class="field-wrap">
+        <label v-bind:class='{active: age!=="" && age!==null, highlight: age!=="" && age!==null}'>
+          Age<span class="req">*</span>
+        </label>
+        <input type="text" v-model='age' required autocomplete="off"/>
+      </div>
+
       <div class="field-wrap">
         <label v-bind:class='{active: eye_color!=="" && eye_color!==null, highlight: eye_color!=="" && eye_color!==null}'>
           Eye Color<span class="req">*</span>
@@ -64,49 +65,51 @@
         <input type="text" v-model='owner_email' required autocomplete="off"/>
       </div>
       <div class="field-wrap">
-        <input type="file" @change="onFileSelected">
+        <label v-bind:class='{active: photo_path!=="" && photo_path!==null, highlight: photo_path!=="" && photo_path!==null}'>
+          Photo Path<span class="req">*</span>
+        </label>
+        <input type="text" v-model='photo_path' required autocomplete="off"/>
       </div>
-      <button class="button button-block" v-on:click='upload()'>Upload</button>
+      <button class="button button-block" v-on:click='upload()'>Search</button>
 
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
   </div>
-
 </template>
 
 <script>
 import Cat from '../scripts/cat.js'
 export default {
-  name: 'AddCat',
+  name: 'SignUp',
   data () {
     return {
       cat_name: null,
-      cat_color: null,
-      breed: null,
+      cat_id: null,
       weight: null,
+      breed: null,
+      color: null,
       age: null,
       eye_color: null,
       hometown: null,
-      owner_email: null,
       sex: null,
+      owner_email: null,
+      photo_path: null,
       s: true,
-      selectedFile: null,
-      smsg: 'Please enter information of your cat'
+      smsg: 'Please enter cat information'
     }
   },
   methods: {
-    upload () {
-      Cat.upload({
+    Upload () {
+      Cat.Upload({
         name: this.cat_name,
         color: this.cat_color,
         breed: this.breed,
         age: this.age,
         weight: this.weight,
-        photo_path: this.selectedFile,
+        photo_path: this.photo_path,
         eye_color: this.eye_color,
         hometown: this.hometown,
-        sex: this.sex,
-        owner_email: this.owner_email
+        sex: this.sex
       }, (err, data) => {
         if (data.status && err == null) {
           this.smsg = 'Uploaded'
