@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import Cat from '../scripts/cat.js'
 export default{
   data () {
     return {
@@ -54,7 +53,7 @@ export default{
       price: null,
       path: null,
       comment: null,
-      username:null
+      username: null
     }
   },
   methods: {
