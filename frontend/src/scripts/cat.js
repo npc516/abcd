@@ -16,6 +16,7 @@ export default {
       cb(err, data)
     })
   },
+
   catSearch (cred, cb) {
     var data = {status: false}
 
@@ -30,15 +31,15 @@ export default {
     })
   },
 
-  get_all_cat(cb){
+  get_all_cat (cb) {
     axios.get(API + '/cats').then((res) => {
       cb(res)
     })
   },
 
-  count_all_cat(cb){
+  count_all_cat (cb) {
     axios.get(API + '/cats').then((res) => {
-      cb(res.length)
+      cb(res.data.length)
     })
   }
 }
