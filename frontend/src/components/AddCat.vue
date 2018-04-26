@@ -101,7 +101,7 @@ export default {
       sex: null,
       owner_email: null,
       photo_path: null,
-      buy_it_now:null,
+      buy_it_now: null,
       s: true,
       smsg: 'Please enter cat information'
     }
