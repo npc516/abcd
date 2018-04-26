@@ -33,7 +33,7 @@ export default {
 
   get_all_cat (cb) {
     axios.get(API + '/cats').then((res) => {
-      cb(res)
+      cb(res.data)
     })
   },
 
