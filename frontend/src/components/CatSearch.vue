@@ -1,6 +1,6 @@
 <template>
   <div class='form'>
-    <div id="signup" v-if='s'>
+    <div id="catSearch">
       <h1> {{ smsg }} </h1>
 
       <div class="top-row">
@@ -47,13 +47,27 @@
         <input type="text" v-model='age' required autocomplete="off"/>
       </div>
 
+      <div class="field-wrap">
+        <label v-bind:class='{active: eye_color!=="" && eye_color!==null, highlight: eye_color!=="" && eye_color!==null}'>
+          Eye Color<span class="req">*</span>
+        </label>
+        <input type="text" v-model='eye_color' required autocomplete="off"/>
+      </div>
+      <div class="field-wrap">
+        <label v-bind:class='{active: hometown!=="" && hometown!==null, highlight: hometown!=="" && hometown!==null}'>
+          Hometown<span class="req">*</span>
+        </label>
+        <input type="text" v-model='hometown' required autocomplete="off"/>
+      </div>
+      <div class="field-wrap">
+        <label v-bind:class='{active: sex!=="" && sex!==null, highlight: sex!=="" && sex!==null}'>
+          Sex<span class="req">*</span>
+        </label>
+        <input type="text" v-model='sex' required autocomplete="off"/>
+      </div>
+
       <button class="button button-block" v-on:click='sign_up()'>Search</button>
 
-    </div>
-    <div id="login" v-if='!s'>
-      <h1> {{ lmsg }} </h1>
-
-      <button class="button button-block" v-on:click='log_in()'>Log In</button>
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
   </div>
@@ -70,11 +84,33 @@ export default {
       breed: null,
       color: null,
       age: null,
+      eye_color: null,
+      hometown: null,
+      sex: null,
       s: true,
       smsg: 'Please enter Searching information'
     }
   },
   methods: {
+    catSearch () {
+      Cat.catSearch({
+        name: this.cat_name,
+        color: this.cat_color,
+        breed: this.breed,
+        age: this.age,
+        weight: this.weight,
+        photo_path: this.selectedFile,
+        eye_color: this.eye_color,
+        hometown: this.hometown,
+        sex: this.sex,
+      }, (err, data) => {
+        if (data.status && err == null) {
+          this.smsg = 'Uploaded'
+        } else {
+          this.smsg = 'Upload fail'
+        }
+      })
+    }
   }
 }
 </script>
