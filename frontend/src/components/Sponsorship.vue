@@ -1,4 +1,4 @@
-f<template>
+<template>
   <div class='formta'>
     <h1 style="font-size:500px color:white font-family:arial">Check our Sponsors!</h1>
 <div id="trainer" v-if='!s'>
