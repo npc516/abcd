@@ -13,7 +13,7 @@
 <p style="color:white; text-align:left; font-size:30px">Numer of Trainers Available: {{numtrainer}}</p>
 </div>
 <br><br>
-<button v-on:click='count_cat()'>generate</button>
+<button class="button button-block" v-on:click='count_cat()'>generate</button>
 </div>
 </div>
 
