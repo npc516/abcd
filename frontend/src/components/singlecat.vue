@@ -1,30 +1,30 @@
 <template>
   <div class='formta'>
-    <img style='width:550px; height:500px; ' src='../assets/image/jackk.jpg'>
+    <img style='width:550px; height:500px; ' src="loadImage(cat.path)">
 <div id="trainer" v-if='!s'>
   <div class='singleform' ><center>
     <div style="display:inline; width:30; float:left; margin-right: 50px; text-align:center">
 
     </div>
     <div style=" text-align:left; display:inline; width:60px float:left">
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat id: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat name: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Color: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Hometown: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Age: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Weight: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Breed: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Eye color: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Sex: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: </p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat id: {{catid}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat name: {{name}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Color: {{color}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Hometown: {{hometown}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Age: {{age}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Weight: {{weight}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Breed: {{breed}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Eye color:{{eye}} </p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Sex: {{sex}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: {{rank}}</p>
+      <p style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: {{price}}</p>
     </div>
  </center></div>
  <br>
  <div class='singleform'>
-   <p style="color:white; text-align:left; font-size:30px">Username: </p>
+   <p style="color:white; text-align:left; font-size:30px">{{username}} </p>
    <div class='commentform'>
-     <p>哦呵呵</p>
+     <p style="color:white; text-align:left; font-size:15px; text-align:center">{{comment}}</p>
    </div>
  </div>
  <br>
@@ -53,7 +53,8 @@ export default{
       rank: null,
       price: null,
       path: null,
-      comment: null
+      comment: null,
+      username:null
     }
   },
   methods: {
