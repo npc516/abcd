@@ -71,6 +71,12 @@
         </label>
         <input type="text" v-model='photo_path' required autocomplete="off"/>
       </div>
+      <div class="field-wrap">
+        <label v-bind:class='{active: buy_it_now!=="" && buy_it_now!==null, highlight: buy_it_now!=="" && buy_it_now!==null}'>
+          Buy it now Price<span class="req">*</span>
+        </label>
+        <input type="text" v-model='buy_it_now' required autocomplete="off"/>
+      </div>
       <button class="button button-block" v-on:click='upload()'>Upload</button>
 
     </div>
@@ -95,6 +101,7 @@ export default {
       sex: null,
       owner_email: null,
       photo_path: null,
+      buy_it_now:null,
       s: true,
       smsg: 'Please enter cat information'
     }
@@ -110,6 +117,7 @@ export default {
         photo_path: this.photo_path,
         eye_color: this.eye_color,
         hometown: this.hometown,
+        buy_it_now: this.buy_it_now,
         sex: this.sex
       }, (err, data) => {
         if (data.status && err == null) {
