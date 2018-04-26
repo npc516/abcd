@@ -28,5 +28,17 @@ export default {
     }).catch((err) => {
       cb(err, data)
     })
+  },
+
+  get_all_cat(cb){
+    axios.get(API + '/cats').then((res) => {
+      cb(res)
+    })
+  },
+
+  count_all_cat(cb){
+    axios.get(API + '/cats').then((res) => {
+      cb(res.length)
+    })
   }
 }
