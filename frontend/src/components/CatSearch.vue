@@ -2,6 +2,7 @@
   <div class='form'>
     <div id="catSearch">
       <h1> {{ smsg }} </h1>
+      <p style="position:relative; top:-20px">(at least enter one)</p>
 
       <div class="top-row">
         <div class="field-wrap">
