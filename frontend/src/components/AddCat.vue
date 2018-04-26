@@ -12,6 +12,7 @@
         </div>
       </div>
       <br>
+      <br>
       <div class="field-wrap">
         <label v-bind:class='{active: breed!=="" && breed!==null, highlight: breed!=="" && breed!==null}'>
           Breed<span class="req">*</span>
@@ -70,7 +71,7 @@
         </label>
         <input type="text" v-model='photo_path' required autocomplete="off"/>
       </div>
-      <button class="button button-block" v-on:click='upload()'>Search</button>
+      <button class="button button-block" v-on:click='upload()'>Upload</button>
 
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
