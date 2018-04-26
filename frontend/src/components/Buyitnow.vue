@@ -20,7 +20,7 @@ export default {
     return {
       s: true,
       smsg: 'The current price for this cat is',
-      pmsg: '[put price here]'
+      pmsg: 'TBD'
     }
   },
   methods: {

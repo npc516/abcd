@@ -10,10 +10,10 @@
       <p style="color:white; text-align:left; font-size:30px">Insurance Name: UCC full-cover</p>
       <p style="color:white; text-align:left; font-size:30px">Company name: niconico</p>
         <p style="color:white; text-align:left; font-size:30px">Insurance fee: $998</p>
-          <p style="color:white; text-align:left; font-size:30px">Policy: ????<br>?????<br>?????</p>
+          <p style="color:white; text-align:left; font-size:30px">Policy: TBD </p>
 
     </div>
-    <br><br>
+    <br><br><br><br><br>
       <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
       <!--点击时连接上database里user的信息和insurance信息，并跳转到signupsuc页面。暂时只实现了跳转页面-->
  </div>
@@ -26,7 +26,7 @@
   <p style="color:white; text-align:left; font-size:30px">Insurance Name: UCC full-cover</p>
   <p style="color:white; text-align:left; font-size:30px">Company name: miaomiaomiao</p>
     <p style="color:white; text-align:left; font-size:30px">Insurance fee: $798</p>
-      <p style="color:white; text-align:left; font-size:30px">Policy: ????<br>?????<br>????</p>
+      <p style="color:white; text-align:left; font-size:30px">Policy: TBD </p>
 </div>
 <br><br>
 <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
