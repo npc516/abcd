@@ -9,4 +9,4 @@ class Tournament(db.Model):
 
     @property
     def json(self):
-        return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k != 'json'}
+        return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k not in {'json', 'metadata', 'query', 'query_class'}}
