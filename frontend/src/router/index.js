@@ -18,6 +18,7 @@ import Cat from '@/components/Cat'
 import test from '@/components/test'
 import perireport from '@/components/perireport'
 import singlecat from '@/components/singlecat'
+import mycat from '@/components/mycat'
 
 Vue.use(Router)
 
@@ -118,6 +119,11 @@ export default new Router({
       path: '/singlecat',
       name: 'singlecat',
       component: singlecat
+    },
+    {
+      path: '/mycat',
+      name: 'mycat',
+      component: mycat
     }
   ]
 })
