@@ -59,6 +59,23 @@ a:hover {
   max-height: 1600px;
   margin: 40px;
 }
+.singleform
+{
+  background: rgba(30,4,47,0.3);
+  padding: 60px;
+  max-width: 1000px;
+  max-height: 1600px;
+  margin: auto;
+}
+.commentform
+{
+  background: rgba(221,204,255,0.5);
+  padding: 5px;
+  max-width: 1000px;
+  max-height: 1600px;
+  margin-left:  170px;
+
+}
 
 .tab-group {
   list-style: none;
