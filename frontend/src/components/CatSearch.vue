@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import Cat from '../scripts/cat.js'
 export default {
   name: 'SignUp',
   data () {
@@ -102,7 +103,7 @@ export default {
         photo_path: this.selectedFile,
         eye_color: this.eye_color,
         hometown: this.hometown,
-        sex: this.sex,
+        sex: this.sex
       }, (err, data) => {
         if (data.status && err == null) {
           this.smsg = 'Uploaded'
