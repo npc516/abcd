@@ -10,7 +10,7 @@ export default {
 
     axios.post(API + '/users/' + cred.email, cred).then((res) => {
       if (res.status === 200) {
-        localStorage.setItem('token', 'Logged in')
+        localStorage.setItem('token', cred['email'])
         data.status = true
       }
       cb(null, data)
@@ -24,7 +24,7 @@ export default {
 
     axios.post(API + '/users', cred).then((res) => {
       if (res.status === 200) {
-        localStorage.setItem('token', 'Logged in')
+        localStorage.setItem('token', cred['email'])
         data.status = true
       }
       cb(null, data)
@@ -35,10 +35,16 @@ export default {
 
   is_logged_in () {
     return localStorage.getItem('token') === null
-  }
+  },
 
-// todo
+  // todo
   // update_price(cred,cb){
 
   // }
+
+  user_cats (cb) {
+    axios.get(API + '/users/cats/' + localStorage.getItem('token')).then((res) => {
+      cb(res.data)
+    })
+  }
 }

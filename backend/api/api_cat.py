@@ -28,5 +28,6 @@ def create_cat():
         db.session.add(cat)
         db.session.commit()
     except Exception as e:
+        print(e)
         return jsonify({'err': 'oops'}), 444
     return jsonify(cat.json), 201

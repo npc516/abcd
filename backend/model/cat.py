@@ -22,12 +22,9 @@ class Cat(db.Model):
     owner_email = db.Column(db.String(64), db.ForeignKey('user.email'), nullable=False)
     audition_id = db.Column(db.Integer, db.ForeignKey('audition.event_id'), nullable=True)
 
-    auction = db.relationship('Auction', backref='cat')
-    comment = db.relationship('Comment', backref='cat')
-
     __table_args__ = (db.ForeignKeyConstraint(['insurer_crn', 'policy_id'], ['policy.crn', 'policy.policy_id']),
                      db.ForeignKeyConstraint(['sponsor_crn', 'sponsorship_id'], ['sponsorship.crn', 'sponsorship.sponsorship_id']),)
     
     @property
     def json(self):
-        return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k not in {'json', 'metadata', 'query', 'query_class'}}
+        return {k: getattr(self, k).json if hasattr(getattr(self, k), 'json') else getattr(self, k) for k in [k for k in dir(self) if k[0] != '_' and k not in {'json', 'metadata', 'query', 'query_class'}]}

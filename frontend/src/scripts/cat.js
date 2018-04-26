@@ -7,7 +7,7 @@ export default {
     var data = {status: false}
 
     axios.post(API + '/cats', cred).then((res) => {
-      if (res.status === 200) {
+      if (res.status === 201) {
         localStorage.setItem('token', 'uploaded')
         data.status = true
       }

@@ -107,18 +107,19 @@ export default {
     }
   },
   methods: {
-    Upload () {
-      Cat.Upload({
-        name: this.cat_name,
-        color: this.cat_color,
-        breed: this.breed,
+    upload () {
+      Cat.upload({
         age: this.age,
-        weight: this.weight,
-        photo_path: this.photo_path,
+        breed: this.breed,
+        color: this.color,
         eye_color: this.eye_color,
         hometown: this.hometown,
         buy_it_now: this.buy_it_now,
-        sex: this.sex
+        sex: this.sex,
+        name: this.cat_name,
+        photo_path: this.photo_path,
+        weight: this.weight,
+        owner_email: this.owner_email
       }, (err, data) => {
         if (data.status && err == null) {
           this.smsg = 'Uploaded'

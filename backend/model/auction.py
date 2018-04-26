@@ -9,8 +9,8 @@ class Auction(db.Model):
 
     cat_id = db.Column(db.Integer, db.ForeignKey('cat.cat_id'), nullable=False)
 
-    bid = db.relationship('Bid', backref='auction')
+    bid = db.relationship('Bid')
 
     @property
     def json(self):
-        return {k: getattr(self, k) for k in dir(self) if k[0] != '_' and k not in {'json', 'metadata', 'query', 'query_class'}}
+        return {k: getattr(self, k).json if hasattr(getattr(self, k), 'json') else getattr(self, k) for k in [k for k in dir(self) if k[0] != '_' and k not in {'json', 'metadata', 'query', 'query_class'}]}
