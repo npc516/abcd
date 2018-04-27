@@ -67,7 +67,7 @@
         <input type="text" v-model='sex' autocomplete="off"/>
       </div>
 
-      <button class="button button-block" v-on:click='sign_up()'>Search</button>
+      <button class="button button-block" v-on:click='catSearch()'>Search</button>
 
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
@@ -89,7 +89,6 @@ export default {
       eye_color: null,
       hometown: null,
       sex: null,
-      s: true,
       smsg: 'Please enter Searching criteria'
     }
   },
@@ -97,20 +96,16 @@ export default {
     catSearch () {
       Cat.catSearch({
         name: this.cat_name,
-        color: this.cat_color,
+        cat_id: this.cat_id,
+        color: this.color,
         breed: this.breed,
         age: this.age,
         weight: this.weight,
-        photo_path: this.selectedFile,
         eye_color: this.eye_color,
         hometown: this.hometown,
         sex: this.sex
-      }, (err, data) => {
-        if (data.status && err == null) {
-          this.smsg = 'Search completed'
-        } else {
-          this.smsg = 'Search failed'
-        }
+      }, (res) => {
+        alert(res[0].cat_id)
       })
     }
   }

@@ -33,6 +33,20 @@ def create_cat():
         return jsonify({'err': 'oops'}), 444
     return jsonify(cat.json), 201
 
+@app.route('/api/cats/search', methods=['POST'])
+def cat_search():
+    try:
+        r = request.json
+        cats = Cat.query.filter()
+        attrs = ['name', 'cat_id', 'color', 'breed', 'age', 'weight', 'eye_color', 'hometown', 'sex']
+        for attr in attrs:
+            if r[attr]:
+                cats = cats.filter(getattr(Cat, attr) == r[attr])
+        return jsonify([cat.json for cat in cats]), 200
+    except RuntimeError as e:
+        print(e)
+        return jsonify({'err': 'oops'}), 444
+
 @app.route('/api/cats/comments/<cat_id>', methods=['GET'])
 def get_comments(cat_id):
   return jsonify([comment.json for comment in Comment.query.filter(Comment.cat_id == cat_id)]), 200

@@ -17,15 +17,8 @@ export default {
   },
 
   catSearch (cred, cb) {
-    var data = {status: false}
-
-    axios.post(API + '/cats', cred).then((res) => {
-      if (res.status === 200) {
-        data.status = true
-      }
-      cb(null, data)
-    }).catch((err) => {
-      cb(err, data)
+    axios.post(API + '/cats/search', cred).then((res) => {
+      cb(res.data)
     })
   },
 
