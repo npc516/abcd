@@ -14,9 +14,16 @@
 
     </div>
     <br><br><br><br><br>
-      <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
-      <!--点击时连接上database里user的信息和insurance信息，并跳转到signupsuc页面。暂时只实现了跳转页面-->
- </div>
+    <div class="field-wrap">
+    <label v-bind:class='{active: ID!=="" && ID!==null, highlight: ID!=="" && ID!==null}'>
+      Cat ID<span class="req">*</span>
+    </label>
+  <input type="text" v-model='ID' required autocomplete="off"/>
+</div>
+    <br>
+    <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
+  </div>
+    
 <br><br><br>
 <div class='trainerform'>
 <div style="display:inline; width:40; float:left; margin-right: 50px">
@@ -28,9 +35,15 @@
     <p style="color:white; text-align:left; font-size:30px">Insurance fee: $798</p>
       <p style="color:white; text-align:left; font-size:30px">Policy: TBD </p>
 </div>
-<br><br>
+<br><br><br><br><br>
+<div class="field-wrap">
+    <label v-bind:class='{active: ID!=="" && ID!==null, highlight: ID!=="" && ID!==null}'>
+      Cat ID<span class="req">*</span>
+    </label>
+  <input type="text" v-model='ID' required autocomplete="off"/>
+</div>
+<br>
 <button class="button button-block" onclick="window.location.href='/Signupsuc'">choose</button>
-<!--点击时连接上database里user的信息和insurance信息，并跳转到signupsuc页面。暂时只实现了跳转页面-->
 </div>
 <br><br><br>
 </div>
