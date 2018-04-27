@@ -31,6 +31,28 @@ a:hover {
   -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
           box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
+.formcatchec {
+  background: rgba(19, 35, 47, 0.6);
+  padding: 60px ;
+  max-width: 1300px ;
+  margin: 40px ;
+
+  -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.formchec {
+  background: rgba(19, 35, 47, 0.6);
+  padding: 60px ;
+  max-width: 350px ;
+  min-width: 350px;
+  margin: 40px ;
+  top: 110px;
+  left:1370px;
+  position: absolute;
+
+  -webkit-box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
 .formhaha
 {
   background: rgba(19, 35, 47, 0.6);

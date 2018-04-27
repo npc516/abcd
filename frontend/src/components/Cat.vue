@@ -1,5 +1,5 @@
 <template>
-  <div class='formta'>
+  <div class='formcatchec'>
     <div id="trainer">
       <ul id="cattest">
         <li v-for="cat in cats" :key='cat.id'>
@@ -22,7 +22,11 @@
         </li>
       </ul>
     </div>
+    <div class='formchec'>
+      
+    </div>
   </div>
+
 </template>
 
 <script>
