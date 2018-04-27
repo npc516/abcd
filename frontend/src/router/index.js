@@ -18,6 +18,7 @@ import test from '@/components/test'
 import perireport from '@/components/perireport'
 import singlecat from '@/components/singlecat'
 import mycat from '@/components/mycat'
+import SearchResult from '@/components/SearchResult'
 
 Vue.use(Router)
 
@@ -61,17 +62,17 @@ export default new Router({
       component: CatSearch
     },
     {
-      path: '/buyitnow',
+      path: '/buyitnow/:cat_id',
       name: 'Buyitnow',
       component: Buyitnow
     },
     {
-      path: '/delivery',
+      path: '/delivery/:cat_id',
       name: 'Delivery',
       component: Delivery
     },
     {
-      path: '/bidding',
+      path: '/bidding/:cat_id',
       name: 'Bidding',
       component: Bidding
     },
@@ -89,6 +90,11 @@ export default new Router({
       path: '/insurance',
       name: 'Insurance',
       component: Insurance
+    },
+    {
+      path: '/searchresult',
+      name: 'SearchResult',
+      component: SearchResult
     },
     {
       path: '/signupsuc',

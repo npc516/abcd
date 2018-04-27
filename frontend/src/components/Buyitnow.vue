@@ -14,17 +14,28 @@
 </template>
 
 <script>
+import Cat from '../scripts/cat.js'
+import BuyItNow from '../scripts/buyitnow.js'
+import Router from '../router/index.js'
 export default {
   name: 'Buyitnow',
   data () {
     return {
       s: true,
-      smsg: 'The current price for this cat is',
+      smsg: 'The Buy-It-Now price for this cat is',
       pmsg: 'TBD'
     }
   },
+  mounted: function () {
+    Cat.get_cat({'cat_id': this.$route.params.cat_id}, (res) => {
+      this.pmsg = res['buy_it_now']
+    })
+  },
   methods: {
     buy_it_now () {
+      BuyItNow.buy_it_now({'cat_id': this.$route.params.cat_id}, (res) => {
+        Router.push('/delivery/' + this.$route.params.cat_id)
+      })
     }
   }
 }

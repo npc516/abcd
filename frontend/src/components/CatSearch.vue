@@ -76,6 +76,7 @@
 
 <script>
 import Cat from '../scripts/cat.js'
+import Router from '../router/index.js'
 export default {
   name: 'SignUp',
   data () {
@@ -105,7 +106,7 @@ export default {
         hometown: this.hometown,
         sex: this.sex
       }, (res) => {
-        alert(res[0].cat_id)
+        Router.push({name: 'SearchResult', params: {cats: res}})
       })
     }
   }

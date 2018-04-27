@@ -57,18 +57,16 @@ export default {
     }
   },
   mounted: function () {
-    Cat.get_all_cat((res) => {
-      this.cats = res
-      for (let i = 0; i < this.cats.length; ++i) {
-        Cat.has_auction({
-          cat_id: this.cats[i].cat_id
-        }, (res) => {
-          if (res.length !== 0) {
-            this.has_auction.push(this.cats[i].cat_id)
-          }
-        })
-      }
-    })
+    this.cats = this.$route.params.cats
+    for (let i = 0; i < this.cats.length; ++i) {
+      Cat.has_auction({
+        cat_id: this.cats[i].cat_id
+      }, (res) => {
+        if (res.length !== 0) {
+          this.has_auction.push(this.cats[i].cat_id)
+        }
+      })
+    }
     this.logged_in = Auth.is_logged_in()
     this.current_user = Auth.current_user()
   }

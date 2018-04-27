@@ -86,6 +86,7 @@
 
 <script>
 import Auth from '../scripts/auth'
+import Router from '../router/index.js'
 export default {
   name: 'SignUp',
   data () {
@@ -112,13 +113,12 @@ export default {
       }, (err, data) => {
         if (data.status && err == null) {
           this.lmsg = 'Log in successful!'
+          Router.go()
+          Router.push('/MainPage')
         } else {
           this.lmsg = 'Email or password incorrect!'
         }
       })
-    },
-    logout () {
-      Auth.logout()
     },
     sign_up () {
       Auth.sign_up({

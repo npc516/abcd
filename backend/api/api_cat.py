@@ -2,6 +2,7 @@ from flask import jsonify, request
 from main import app, db
 from model.cat import Cat
 from model.comment import Comment
+from model.auction import Auction
 
 @app.route('/api/cats', methods=['GET'])
 def all_cats():
@@ -24,7 +25,8 @@ def create_cat():
                   photo_path=r['photo_path'],
                   sex=r['sex'],
                   weight=r['weight'],
-                  owner_email=r['owner_email']
+                  owner_email=r['owner_email'],
+                  buy_it_now=r['buy_it_now']
                   )
         db.session.add(cat)
         db.session.commit()
@@ -49,4 +51,8 @@ def cat_search():
 
 @app.route('/api/cats/comments/<cat_id>', methods=['GET'])
 def get_comments(cat_id):
-  return jsonify([comment.json for comment in Comment.query.filter(Comment.cat_id == cat_id)]), 200
+    return jsonify([comment.json for comment in Comment.query.filter(Comment.cat_id == cat_id)]), 200
+
+@app.route('/api/cats/auctions/<cat_id>', methods=['GET'])
+def has_auction(cat_id):
+    return jsonify([auction.json for auction in Auction.query.filter(Auction.cat_id == cat_id)]), 200

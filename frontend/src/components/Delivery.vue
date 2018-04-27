@@ -1,6 +1,6 @@
 <template>
   <div class='form'>
-    <div id="signup" v-if='s'>
+    <div>
       <h1> {{ smsg }} </h1>
 
       <div class="top-row">
@@ -47,21 +47,18 @@
         <input type="text" v-model='zip' required autocomplete="off"/>
       </div>
 
-      <button class="button button-block" v-on:click='sign_up()'>Use this address</button>
+      <button class="button button-block" v-on:click='deliver()' :disabled='disable'>Deliver</button>
 
-    </div>
-    <div id="login" v-if='!s'>
-      <h1> {{ lmsg }} </h1>
-
-      <button class="button button-block" v-on:click='log_in()'>Log In</button>
     </div>
     <img style="position:absolute; top:150px; left:980px; width:800px" src="../assets/image/icon.png">
   </div>
 </template>
 
 <script>
+import Delivery from '../scripts/delivery.js'
+import Auth from '../scripts/auth.js'
 export default {
-  name: 'SignUp',
+  name: 'Delivery',
   data () {
     return {
       email: null,
@@ -71,15 +68,28 @@ export default {
       city: null,
       state: null,
       zip: null,
-      s: true,
-      smsg: 'Please enter your shipping address'
+      smsg: 'Please enter your shipping address',
+      disable: false
     }
   },
   methods: {
+    deliver () {
+      Delivery.delivery({
+        destination: this.city,
+        receiver_email: Auth.current_user(),
+        cat_id: this.$route.params.cat_id
+      }, (res) => {
+        this.disable = true
+        this.smsg = 'Your cat will be delivered in ' + res.eta + ' days!'
+      })
+    }
   }
 }
 </script>
 
 <style>
+.button[disabled] {
+  background: #cccccc
+}
 @import '../../static/css/style.css';
 </style>

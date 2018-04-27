@@ -67,9 +67,9 @@
       </div>
       <div class="field-wrap">
         <label v-bind:class='{active: buy_it_now!=="" && buy_it_now!==null, highlight: buy_it_now!=="" && buy_it_now!==null}'>
-          Buy it now Price<span class="req">*</span>
+          Buy it now Price<span class="req"></span>
         </label>
-        <input type="text" v-model='buy_it_now' required autocomplete="off"/>
+        <input type="text" v-model='buy_it_now' autocomplete="off"/>
       </div>
       <button class="button button-block" v-on:click='upload()'>Upload</button>
 

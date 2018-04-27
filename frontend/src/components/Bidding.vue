@@ -12,7 +12,7 @@
         <input type="tel" v-model='newprice' required autocomplete="off"/>
       </div>
 
-      <button class="button button-block" v-on:click='bid()'>Bid</button>
+      <button class="button button-block" v-on:click='bid()' :disabled='newprice <= pmsg'>Bid</button>
 
     </div>
 
@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import Auth from '../scripts/auth'
+import Bidding from '../scripts/bidding.js'
+import Auth from '../scripts/auth.js'
 export default {
   name: 'Bid',
   data () {
@@ -29,24 +30,35 @@ export default {
       newprice: null,
       s: true,
       smsg: 'The highest bidding for this cat is',
-      pmsg: '[put price here]'
+      pmsg: null,
+      user_email: null
     }
   },
+  mounted: function () {
+    Bidding.get_high_bid({'cat_id': this.$route.params.cat_id}, (res) => {
+      this.pmsg = res['price']
+    })
+    this.user_email = Auth.current_user()
+  },
   methods: {
-    update_price () {
-      Auth.update_price({
-        newprice: this.newprice
-      }, (err, data) => {
-        if (this.newprice <= this.oldprice && err == null) {
-          this.lmsg = 'Low Price!'
-        } else {
-          this.lmsg = 'Bidding Succesful!'
-        }
+    bid () {
+      Bidding.bid({
+        cat_id: this.$route.params.cat_id,
+        price: this.newprice,
+        user_email: this.user_email
+      }, (res) => {
+        this.pmsg = res['price']
+        // Router.push('/delivery/' + this.$route.params.cat_id)
       })
     }
   }
 }
 </script>
-<style>
+<style scope>
 @import '../../static/css/style.css';
+
+.button[disabled] {
+  background: #cccccc
+}
+
 </style>

@@ -4,7 +4,6 @@
     <h1 style="font-size:500px color:white font-family:arial">Check our professional trainers!</h1>
 <div id="trainer" >
 
-
 <ul id="traintest">
   <li v-for="trainer in trainers" :key='trainer.id'>
 <div class='trainerform'>

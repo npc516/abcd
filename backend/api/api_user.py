@@ -21,7 +21,7 @@ def user_create():
 @app.route('/api/users/<email>', methods=['POST'])
 def user_login(email):
     if request.json['password'] == User.query.get(email).password:
-        return jsonify({'status': True}), 200
+        return jsonify(User.query.get(email).json), 200
     else:
         return jsonify({'err': 'oops'}), 444
 
