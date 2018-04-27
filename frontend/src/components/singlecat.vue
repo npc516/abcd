@@ -21,7 +21,19 @@
             <p v-if='cat.buy_it_now !== null' class='c'>Buy it now price: {{cat.buy_it_now}}</p>
           </div>
         </center>
+      </div><br>
+      <div class='singleform'>
+        <p style="color:white; text-align:left; font-size:30px">Bid Increment: </p>
+        <textarea v-model='new_comment' required autocomplete="off" /><br>
+        <p style="color:white; text-align:left; font-size:30px">Start Price: </p>
+        <textarea v-model='new_comment' required autocomplete="off" /><br>
+        <p style="color:white; text-align:left; font-size:30px">Start Date: </p>
+        <textarea v-model='new_comment' required autocomplete="off" /><br>
+        <p style="color:white; text-align:left; font-size:30px">Duration: </p>
+        <textarea v-model='new_comment' required autocomplete="off" /><br><br>
+        <button class='button button-block' v-on:click='submit()'>Start Auction</button>
       </div>
+
       <br>
       <ul class='singleform'>
         <li v-for='comment in comments' :key='comment.comment_id'><br>
@@ -37,6 +49,8 @@
         </li>
       </ul>
     </div>
+    <br>
+
     <br>
     <div class='singleform'>
       <p style="color:white; text-align:left; font-size:30px">Comment: </p>
