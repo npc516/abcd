@@ -23,7 +23,7 @@
       </div>
       <br>
       <ul class='singleform'>
-        <li v-for='comment in comments' :key='comment.comment_id'>
+        <li v-for='comment in comments' :key='comment.comment_id'><br>
           <div class='usercommentform'><br>
           <div class="userform">
           <p style="color:white; text-align:left; font-size:40px">{{comment.user_email}} </p>
@@ -32,7 +32,7 @@
           <div class='commentform'>
             <p style="color:white; font-size:35px">{{comment.content}}</p>
           </div><br>
-        </div>
+        </div><br>
         </li>
       </ul>
     </div>
