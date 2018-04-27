@@ -37,6 +37,10 @@ export default {
     return localStorage.getItem('token') === null
   },
 
+  current_user () {
+    return localStorage.getItem('token')
+  },
+
   // todo
   // update_price(cred,cb){
 

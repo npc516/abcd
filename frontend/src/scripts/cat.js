@@ -39,5 +39,17 @@ export default {
     axios.get(API + '/cats').then((res) => {
       cb(res.data.length)
     })
+  },
+
+  get_cat (cred, cb) {
+    axios.get(API + '/cats/' + cred['cat_id']).then((res) => {
+      cb(res.data)
+    })
+  },
+
+  get_comments (cred, cb) {
+    axios.get(API + '/cats/comments/' + cred['cat_id']).then((res) => {
+      cb(res.data)
+    })
   }
 }

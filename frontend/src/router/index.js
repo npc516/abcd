@@ -110,7 +110,7 @@ export default new Router({
       component: perireport
     },
     {
-      path: '/singlecat',
+      path: '/singlecat/:cat_id',
       name: 'singlecat',
       component: singlecat
     },

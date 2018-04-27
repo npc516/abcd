@@ -1,23 +1,24 @@
 <template>
-  <div class='formta'>
-    <img style='width:550px; height:500px; ' src="loadImage(cat.path)">
+  <div class='formta' v-if='cat !== null'>
+    <img style='width:550px; height:500px; ' :src="loadImage(cat.photo_path)">
+    <br><br>
     <div id="trainer">
       <div class='singleform'>
         <center>
           <div style="display:inline; width:30; float:left; margin-right: 50px; text-align:center">
           </div>
           <div style=" text-align:left; display:inline; width:60px float:left">
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat id: {{catid}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat name: {{name}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Color: {{color}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Hometown: {{hometown}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Age: {{age}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Weight: {{weight}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Breed: {{breed}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Eye color:{{eye}} </p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Sex: {{sex}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: {{rank}}</p>
-            <p style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: {{price}}</p>
+            <p class='c'>Cat id: {{cat.cat_id}}</p>
+            <p class='c'>Cat name: {{cat.name}}</p>
+            <p class='c'>Color: {{cat.color}}</p>
+            <p class='c'>Hometown: {{cat.hometown}}</p>
+            <p class='c'>Age: {{cat.age}}</p>
+            <p class='c'>Weight: {{cat.weight}}</p>
+            <p class='c'>Breed: {{cat.breed}}</p>
+            <p class='c'>Eye color:{{cat.eye_color}} </p>
+            <p class='c'>Sex: {{cat.sex}}</p>
+            <p v-if='cat.ranking !== null' style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: {{cat.ranking}}</p>
+            <p v-if='cat.buy_it_now !== null' style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: {{cat.buy_it_now}}</p>
           </div>
         </center>
       </div>
@@ -38,50 +39,52 @@
     </div>
     <br>
     <div class='singleform'>
-      <p style="color:white; text-align:left; font-size:30px">comment: </p>
-      <input type="text" required autocomplete="off" />
+      <p style="color:white; text-align:left; font-size:30px">Comment: </p>
+      <textarea v-model='new_comment' required autocomplete="off" />
+      <br>
+      <button class='button button-block' v-on:click='submit()'>Submit</button>
     </div>
   </div>
 </template>
 <script>
+import Cat from '../scripts/cat.js'
+import Comment from '../scripts/comment.js'
+import Auth from '../scripts/auth.js'
+import Router from '../router/index.js'
 export default {
   data () {
     return {
-      catid: null,
-      name: null,
-      color: null,
-      hometown: null,
-      age: null,
-      weight: null,
-      breed: null,
-      eye: null,
-      sex: null,
-      rank: null,
-      price: null,
-      path: null,
-      comments: [{
-        'comment_id': 1,
-        'content': 'helloasdasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
-        'user_email': 'abcd',
-        'cat_id': 1
-      },
-      {
-        'comment_id': 1,
-        'content': 'helloasdasdffffffffffffffffffffffffffffffffffffffff',
-        'user_email': 'abcddddd',
-        'cat_id': 1
-      }
-      ],
-      username: null
+      cat: null,
+      comments: null,
+      new_comment: null
     }
   },
   methods: {
     loadImage (imagePath) {
-      return require('../assets/image' + imagePath + '.jpg')
+      return require('../assets/image/' + imagePath + '.jpg')
+    },
+    submit () {
+      Comment.add_comment({'content': this.new_comment, 'cat_id': this.$route.params.cat_id, 'user_email': Auth.current_user()}, (res) => {})
+      Router.push(this.$route)
     }
+  },
+  mounted: function () {
+    Cat.get_cat({'cat_id': this.$route.params.cat_id}, (res) => {
+      this.cat = res
+    })
+    Cat.get_comments({'cat_id': this.$route.params.cat_id}, (res) => {
+      this.comments = res
+    })
   }
 }
 </script>
-<style>
+<style scoped>
 @import '../../static/css/style.css';
+
+.c {
+color: white;
+text-align: left;
+font-size: 30px;
+}
+
 </style>

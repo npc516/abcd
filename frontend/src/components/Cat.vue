@@ -5,6 +5,7 @@
         <li v-for="cat in cats" :key='cat.id'>
           <div class='trainerform'>
             <div style="display:inline; width:40; float:left; margin-right: 50px">
+            <img style='width:350px; height:300px;' :src="loadImage(cat.photo_path)">
             </div>
             <div style=" text-align:left; display:inline; width:60px float:left">
               <p style="color:white; text-align:left; font-size:30px">name: {{cat.name}}</p>

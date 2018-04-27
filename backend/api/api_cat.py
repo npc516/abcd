@@ -1,6 +1,7 @@
 from flask import jsonify, request
 from main import app, db
 from model.cat import Cat
+from model.comment import Comment
 
 @app.route('/api/cats', methods=['GET'])
 def all_cats():
@@ -8,7 +9,7 @@ def all_cats():
 
 @app.route('/api/cats/<id>', methods=['GET'])
 def cat_get(id):
-    return Cat.query.get(id)
+    return jsonify(Cat.query.get(id).json), 200
 
 @app.route('/api/cats', methods=['POST'])
 def create_cat():
@@ -31,3 +32,7 @@ def create_cat():
         print(e)
         return jsonify({'err': 'oops'}), 444
     return jsonify(cat.json), 201
+
+@app.route('/api/cats/comments/<cat_id>', methods=['GET'])
+def get_comments(cat_id):
+  return jsonify([comment.json for comment in Comment.query.filter(Comment.cat_id == cat_id)]), 200

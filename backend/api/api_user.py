@@ -27,5 +27,4 @@ def user_login(email):
 
 @app.route('/api/users/cats/<email>', methods=['GET'])
 def user_cats(email):
-    print([cat.json for cat in Cat.query.filter(Cat.owner_email == email)])
     return jsonify([cat.json for cat in Cat.query.filter(Cat.owner_email == email)]), 200

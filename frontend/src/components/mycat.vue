@@ -15,7 +15,7 @@
               <p style="color:white; text-align:left; font-size:30px">color: {{cat.color}} </p>
             </div>
             <br><br>
-            <button class="button button-block" onclick="window.location.href='/buyitnow'">Buy it Now</button>
+            <button class="button button-block" v-on:click='detail(cat.cat_id)'>Details</button>
             <br>
             <button class="button button-block" onclick="window.location.href='/bidding'">Enter Bidding</button>
           </div>
@@ -27,6 +27,7 @@
 
 <script>
 import Auth from '../scripts/auth.js'
+import Router from '../router/index.js'
 export default {
   data () {
     return {
@@ -40,8 +41,10 @@ export default {
   },
   methods: {
     loadImage (ipath) {
-      alert(ipath)
       return require('../assets/image/' + ipath + '.jpg')
+    },
+    detail (cid) {
+      Router.push('/singlecat/' + cid)
     }
   }
 }
