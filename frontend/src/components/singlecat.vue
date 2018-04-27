@@ -24,13 +24,13 @@
       </div><br>
       <div class='singleform'>
         <p style="color:white; text-align:left; font-size:30px">Bid Increment: </p>
-        <textarea v-model='new_comment' required autocomplete="off" /><br>
+        <input v-model='new_comment' required autocomplete="off" /><br>
         <p style="color:white; text-align:left; font-size:30px">Start Price: </p>
-        <textarea v-model='new_comment' required autocomplete="off" /><br>
+        <input v-model='new_comment' required autocomplete="off" /><br>
         <p style="color:white; text-align:left; font-size:30px">Start Date: </p>
-        <textarea v-model='new_comment' required autocomplete="off" /><br>
+        <input v-model='new_comment' required autocomplete="off" /><br>
         <p style="color:white; text-align:left; font-size:30px">Duration: </p>
-        <textarea v-model='new_comment' required autocomplete="off" /><br><br>
+        <input v-model='new_comment' required autocomplete="off" /><br><br>
         <button class='button button-block' v-on:click='submit()'>Start Auction</button>
       </div>
 
@@ -38,14 +38,14 @@
       <ul class='singleform'>
         <li v-for='comment in comments' :key='comment.comment_id'><br>
           <div class='usercommentform'><br>
-          <div class="userform">
-          <p style="color:white; text-align:left; font-size:40px">{{comment.user_email}} </p>
-        </div>
-        <br>
-          <div class='commentform'>
-            <p style="color:white; font-size:35px">{{comment.content}}</p>
+            <div class="userform">
+              <p style="color:white; text-align:left; font-size:40px">{{comment.user_email}} </p>
+            </div>
+            <br>
+            <div class='commentform'>
+              <p style="color:white; font-size:35px">{{comment.content}}</p>
+            </div><br>
           </div><br>
-        </div><br>
         </li>
       </ul>
     </div>
@@ -55,8 +55,8 @@
     <div class='singleform'>
       <p style="color:white; text-align:left; font-size:30px">Comment: </p>
       <textarea v-model='new_comment' required autocomplete="off" />
-      <br>
-      <button class='button button-block' v-on:click='submit()'>Submit</button>
+        <br>
+        <button class='button button-block' v-on:click='submit()'>Submit</button>
     </div>
   </div>
 </template>
@@ -64,7 +64,6 @@
 import Cat from '../scripts/cat.js'
 import Comment from '../scripts/comment.js'
 import Auth from '../scripts/auth.js'
-import Router from '../router/index.js'
 export default {
   data () {
     return {
@@ -79,7 +78,9 @@ export default {
     },
     submit () {
       Comment.add_comment({'content': this.new_comment, 'cat_id': this.$route.params.cat_id, 'user_email': Auth.current_user()}, (res) => {})
-      Router.push(this.$route)
+      Cat.get_comments({'cat_id': this.$route.params.cat_id}, (res) => {
+        this.comments = res
+      })
     }
   },
   mounted: function () {
@@ -96,9 +97,9 @@ export default {
 @import '../../static/css/style.css';
 
 .c {
-color: white;
-text-align: left;
-font-size: 30px;
+  color: white;
+  text-align: left;
+  font-size: 30px;
 }
 
 </style>
