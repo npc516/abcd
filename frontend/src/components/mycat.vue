@@ -2,7 +2,7 @@
   <div class='formta'>
     <div id="trainer">
       <ul id="cattest">
-        <li v-for="cat in cats" :key="cat.id">
+        <li v-for="cat in cats" :key="cat.cat_id">
           <div class='trainerform'>
             <div style="display:inline; width:40; float:left; margin-right: 50px">
               <img style='width:350px; height:300px;' :src="loadImage(cat.photo_path)">
@@ -17,7 +17,6 @@
             <br><br>
             <button class="button button-block" v-on:click='detail(cat.cat_id)'>Details</button>
             <br>
-            <button class="button button-block" onclick="window.location.href='/bidding'">Enter Bidding</button>
           </div>
         </li>
       </ul>
@@ -37,6 +36,10 @@ export default {
   mounted: function () {
     Auth.user_cats((cats) => {
       this.cats = cats
+      var cat
+      for (cat of this.cats) {
+        cat.min_price = null
+      }
     })
   },
   methods: {

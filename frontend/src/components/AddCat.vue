@@ -60,12 +60,6 @@
         <input type="text" v-model='sex' required autocomplete="off"/>
       </div>
       <div class="field-wrap">
-        <label v-bind:class='{active: owner_email!=="" && owner_email!==null, highlight: owner_email!=="" && owner_email!==null}'>
-          Owner Email<span class="req">*</span>
-        </label>
-        <input type="text" v-model='owner_email' required autocomplete="off"/>
-      </div>
-      <div class="field-wrap">
         <label v-bind:class='{active: photo_path!=="" && photo_path!==null, highlight: photo_path!=="" && photo_path!==null}'>
           Photo Path<span class="req">*</span>
         </label>
@@ -86,6 +80,7 @@
 
 <script>
 import Cat from '../scripts/cat.js'
+import Auth from '../scripts/auth.js'
 export default {
   name: 'SignUp',
   data () {
@@ -119,7 +114,7 @@ export default {
         name: this.cat_name,
         photo_path: this.photo_path.slice(0, -4),
         weight: this.weight,
-        owner_email: this.owner_email
+        owner_email: Auth.current_user()
       }, (err, data) => {
         if (data.status && err == null) {
           this.smsg = 'Uploaded'

@@ -15,10 +15,10 @@
             <p class='c'>Age: {{cat.age}}</p>
             <p class='c'>Weight: {{cat.weight}}</p>
             <p class='c'>Breed: {{cat.breed}}</p>
-            <p class='c'>Eye color:{{cat.eye_color}} </p>
+            <p class='c'>Eye color: {{cat.eye_color}} </p>
             <p class='c'>Sex: {{cat.sex}}</p>
-            <p v-if='cat.ranking !== null' style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: {{cat.ranking}}</p>
-            <p v-if='cat.buy_it_now !== null' style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: {{cat.buy_it_now}}</p>
+            <p v-if='cat.ranking !== null' class='c'>Ranking: {{cat.ranking}}</p>
+            <p v-if='cat.buy_it_now !== null' class='c'>Buy it now price: {{cat.buy_it_now}}</p>
           </div>
         </center>
       </div>
