@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     imageChange () {
-      this.ipath = Math.floor(Math.random() * (4 - 1 + 1)) + 1
+      this.ipath = Math.floor(Math.random() * (15)) + 1
     },
     imageLoad () {
       return require('../assets/image/' + this.ipath + '.jpg')
