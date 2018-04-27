@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import AddCat from '@/components/AddCat'
 import CatSearch from '@/components/CatSearch'
 import Index from '@/components/Index'
@@ -32,8 +31,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'MainPage',
+      component: MainPage
     },
     {
       path: '/index',
@@ -99,11 +98,6 @@ export default new Router({
       path: '/Sponsorship',
       name: 'Sponsorship',
       component: Sponsorship
-    },
-    {
-      path: '/MainPage',
-      name: 'MainPage',
-      component: MainPage
     },
     {
       path: '/test',

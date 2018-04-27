@@ -117,7 +117,7 @@ export default {
         buy_it_now: this.buy_it_now,
         sex: this.sex,
         name: this.cat_name,
-        photo_path: this.photo_path,
+        photo_path: this.photo_path.slice(0, -4),
         weight: this.weight,
         owner_email: this.owner_email
       }, (err, data) => {

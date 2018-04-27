@@ -1,43 +1,45 @@
 <template>
   <div class='formta'>
     <img style='width:550px; height:500px; ' src="loadImage(cat.path)">
-<div id="trainer" v-if='!s'>
-  <div class='singleform' ><center>
-    <div style="display:inline; width:30; float:left; margin-right: 50px; text-align:center">
-
+    <div id="trainer">
+      <div class='singleform'>
+        <center>
+          <div style="display:inline; width:30; float:left; margin-right: 50px; text-align:center">
+          </div>
+          <div style=" text-align:left; display:inline; width:60px float:left">
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat id: {{catid}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat name: {{name}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Color: {{color}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Hometown: {{hometown}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Age: {{age}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Weight: {{weight}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Breed: {{breed}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Eye color:{{eye}} </p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Sex: {{sex}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: {{rank}}</p>
+            <p style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: {{price}}</p>
+          </div>
+        </center>
+      </div>
+      <br>
+      <ul class='singleform'>
+        <li v-for='comment in comments' :key='comment.comment_id'>
+          <p style="color:white; text-align:left; font-size:30px">{{comment.user_email}} </p>
+          <div class='commentform'>
+            <p style="color:white; text-align:left; font-size:15px; text-align:center">{{comment.content}}</p>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div style=" text-align:left; display:inline; width:60px float:left">
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat id: {{catid}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Cat name: {{name}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Color: {{color}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Hometown: {{hometown}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Age: {{age}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Weight: {{weight}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Breed: {{breed}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Eye color:{{eye}} </p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Sex: {{sex}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Ranking: {{rank}}</p>
-      <p style="color:white; text-align:left; font-size:30px; text-align:center">Buy it now price: {{price}}</p>
+    <br>
+    <div class='singleform'>
+      <p style="color:white; text-align:left; font-size:30px">comment: </p>
+      <input type="text" required autocomplete="off" />
     </div>
- </center></div>
- <br>
- <div class='singleform'>
-   <p style="color:white; text-align:left; font-size:30px">{{username}} </p>
-   <div class='commentform'>
-     <p style="color:white; text-align:left; font-size:15px; text-align:center">{{comment}}</p>
-   </div>
- </div>
- <br>
- <div class='singleform'>
-   <p style="color:white; text-align:left; font-size:30px">comment: </p>
-     <input type="text"  required autocomplete="off" />
- </div>
-</div>
-</div>
+  </div>
 </template>
-
 <script>
-export default{
+export default {
   data () {
     return {
       catid: null,
@@ -52,7 +54,12 @@ export default{
       rank: null,
       price: null,
       path: null,
-      comment: null,
+      comments: [{
+        'comment_id': 1,
+        'content': 'helloasdasd',
+        'user_email': 'abcd',
+        'cat_id': 1
+      }],
       username: null
     }
   },
@@ -63,7 +70,6 @@ export default{
   }
 }
 </script>
-
 <style>
-  @import '../../static/css/style.css';
+@import '../../static/css/style.css';
 </style>
