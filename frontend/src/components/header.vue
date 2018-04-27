@@ -10,6 +10,7 @@
       <li><router-link to="/Sponsorship">Sponsors</router-link></li>
       <li><router-link to="/mycat"  exact>My cat</router-link></li>
       <li><router-link to="/auth"  exact>Sign Up/Log In</router-link></li>
+      <li><div class=welcomeform><p style="font-family:arial">WELCOME BACK! npc516</p></div></li>
 
     </ul>
   </nav>

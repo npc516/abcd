@@ -116,6 +116,20 @@ a:hover {
   padding-left: 25px;
   width: fit-content;
 }
+.welcomeform
+{
+  background: #a5aecc;
+  padding: 5px;
+  max-height: 39px;
+  min-height: 39px;
+  margin-left: 20px;
+  border-radius: 25px;
+  text-align: left;
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  width: fit-content;
+}
 .usercommentform
 {
   background: rgba(144, 158, 181, 0.5);
