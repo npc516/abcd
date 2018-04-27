@@ -24,10 +24,15 @@
       <br>
       <ul class='singleform'>
         <li v-for='comment in comments' :key='comment.comment_id'>
-          <p style="color:white; text-align:left; font-size:30px">{{comment.user_email}} </p>
+          <div class='usercommentform'><br>
+          <div class="userform">
+          <p style="color:white; text-align:left; font-size:40px">{{comment.user_email}} </p>
+        </div>
+        <br>
           <div class='commentform'>
-            <p style="color:white; text-align:left; font-size:15px; text-align:center">{{comment.content}}</p>
-          </div>
+            <p style="color:white; font-size:35px">{{comment.content}}</p>
+          </div><br>
+        </div>
         </li>
       </ul>
     </div>
@@ -56,10 +61,17 @@ export default {
       path: null,
       comments: [{
         'comment_id': 1,
-        'content': 'helloasdasd',
+        'content': 'helloasdasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
         'user_email': 'abcd',
         'cat_id': 1
-      }],
+      },
+      {
+        'comment_id': 1,
+        'content': 'helloasdasdffffffffffffffffffffffffffffffffffffffff',
+        'user_email': 'abcddddd',
+        'cat_id': 1
+      }
+    ],
       username: null
     }
   },

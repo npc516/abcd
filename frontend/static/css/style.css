@@ -69,12 +69,45 @@ a:hover {
 }
 .commentform
 {
-  background: rgba(221,204,255,0.5);
+  background: #a5aecc;
   padding: 5px;
   max-width: 1000px;
   max-height: 1600px;
   margin-left:  170px;
-
+  border-radius: 25px;
+  text-align: left;
+  padding-left: 45px;
+  padding-top: 15px;
+  padding-right: 45px;
+  word-wrap: break-word;
+}
+.userform
+{
+  background: #a5aecc;
+  padding: 5px;
+  height: fit-content;
+  margin-left: 20px;
+  border-radius: 25px;
+  text-align: left;
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  width: fit-content;
+}
+.usercommentform
+{
+  background: rgba(144, 158, 181, 0.5);
+  padding: 5px;
+  height: fit-content;
+  max-width: 870px;
+  min-width: 870px;
+  margin-left: 10px;
+  border-radius: 25px;
+  text-align: left;
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  width: fit-content;
 }
 
 .tab-group {
