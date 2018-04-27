@@ -8,7 +8,9 @@
       <li><router-link to="/CatSearch" exact>Cat Search</router-link></li>
       <li><router-link to="/Insurance">Insurance</router-link></li>
       <li><router-link to="/Sponsorship">Sponsors</router-link></li>
+      <li><router-link to="/mycat"  exact>My cat</router-link></li>
       <li><router-link to="/auth"  exact>Sign Up/Log In</router-link></li>
+
     </ul>
   </nav>
 </template>

@@ -71,7 +71,7 @@ export default {
         'user_email': 'abcddddd',
         'cat_id': 1
       }
-    ],
+      ],
       username: null
     }
   },
